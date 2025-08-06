@@ -1,0 +1,418 @@
+openapi: 3.0.3
+info:
+  title: JobDTO
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    JobDTO:
+      type: object
+      properties:
+        ansNotes:
+          description: The notes received by ANS for this job
+          type: string
+          x-mapped-to: JobAnsNotes
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        areImagesRequired:
+          description: Is the driver instructed to take images at scene
+          type: boolean
+          x-mapped-to: JobAreImagesRequired
+          nullable: false
+        authorisedMiles:
+          type: integer
+          description: The number of miles authorised to travel
+          x-mapped-to: JobAuthorisedMiles
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        bookEarliestDateTime:
+          type: string
+          format: date-time
+          x-firestore-type: timestamp
+          description: >-
+            The booking window start time to carry out the job
+          x-mapped-to: JobBookEarliestDateTime
+          nullable: true
+        bookLatestDateTime:
+          type: string
+          format: date-time
+          x-firestore-type: timestamp
+          description: >-
+            The booking window end time to carry out the job
+          x-mapped-to: JobBookLatestDateTime
+          nullable: true
+        caseNumber:
+          description: The job provider's case number
+          type: string
+          x-mapped-to: JobCaseNumber
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        categoryOfServiceToBeProvided:
+          type: string
+          x-mapped-to: JobCategoryOfServiceToBeProvided
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        conditionReportEmailAddress:
+          description: The email address/s to send the condition report to
+          type: string
+          x-mapped-to: RCREmailAddress
+          nullable: true
+        contractCode:
+          type: string
+          x-mapped-to: JobContractCode
+          nullable: true
+        controllerContactDetails:
+          description: Contact details for the job provider's controller
+          type: string
+          x-mapped-to: JobControllerContactDetails
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        dateTime:
+          type: string
+          format: date-time
+          x-firestore-type: timestamp
+          description: When the job is due
+          x-mapped-to: JobDateTime
+          nullable: false
+        destination:
+          type: object
+          properties:
+            code:
+              type: string
+              x-mapped-to: JobDestinationCode
+              nullable: true
+            description:
+              type: string
+              x-mapped-to: JobDestination
+              nullable: true
+            gps:
+              type: object
+              x-mapped-to: NEW
+              x-firestore-type: geopoint
+              nullable: true
+          nullable: true
+        docId:
+          type: string
+          description: >-
+            Each Firestore document id needs to be unique within the collection.
+            Use this id when writing to Firestore.
+          x-mapped-to: NEW
+          example: >-
+            <job-id>-<driver-uid>-<service-id> although I realise that an ANS job does not have a job id
+            so please come up with a suitable unique identifier.
+          nullable: false
+        driverUid:
+          type: string
+          description: <installation-code>-<driver_id>
+          x-mapped-to: NEW
+          nullable: false
+        eta:
+          type: string
+          format: date-time
+          x-firestore-type: timestamp
+          x-mapped-to: NEW
+          nullable: true
+        hasSpecialNeeds:
+          type: boolean
+          x-mapped-to: JobHasSpecialNeeds
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for a job
+          x-mapped-to: JobId
+          example: ANS jobs will be null while RMS jobs will be populated
+          nullable: true
+        isCancelled:
+          type: boolean
+          x-mapped-to: NEW
+          nullable: false
+        isFaultOutcomeAnsStandard:
+          description: ANS standard codes for ANS job
+          type: boolean
+          x-mapped-to: NEW
+          nullable: true
+        isRedeployable:
+          type: boolean
+          x-mapped-to: NEW
+          nullable: false
+        location:
+          type: object
+          properties:
+            code:
+              type: string
+              x-mapped-to: JobLocationCode
+              nullable: true
+            description:
+              type: string
+              x-mapped-to: JobLocationDescription
+              nullable: true
+            gps:
+              type: object
+              x-mapped-to: NEW
+              x-firestore-type: geopoint
+              nullable: true
+          nullable: true
+        locationOfKeys:
+          description: Where the keys of the vehicle are located
+          type: string
+          x-mapped-to: JobLocationOfKeys
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        orderNumber:
+          type: string
+          x-mapped-to: JobOrderNumber
+          nullable: true
+        owner:
+          type: object
+          properties:
+            address:
+              type: string
+              x-mapped-to: JobOwnerAddress
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            alternatePhone:
+              type: string
+              x-mapped-to: JobOwnerAlternatePhone
+              nullable: true
+            membershipNo:
+              type: string
+              x-mapped-to: JobOwnerMembershipNo
+              nullable: true
+            name:
+              type: string
+              x-mapped-to: JobOwnerName
+              nullable: true
+            phone:
+              type: string
+              x-mapped-to: JobOwnerPhone
+              nullable: true
+            postcode:
+              type: string
+              x-mapped-to: JobOwnerPostcode
+              x-used-in-legacy-notes-section: true
+              nullable: true
+          nullable: true
+        passengers:
+          type: object
+          properties:
+            adult:
+              type: integer
+              x-mapped-to: JobPassengerAdult
+              nullable: true
+            child:
+              type: integer
+              x-mapped-to: JobPassengerChild
+              nullable: true
+          nullable: true
+        priority:
+          type: object
+          properties:
+            detail:
+              type: string
+              x-mapped-to: JobPriorityDetail
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            reason:
+              type: integer
+              x-mapped-to: JobPriorityReason
+              x-used-in-legacy-notes-section: true
+              nullable: true
+          nullable: true
+        provider:
+          type: string
+          x-mapped-to: ProviderName
+          nullable: true
+        requiredTowType:
+          type: string
+          x-mapped-to: JobRequiredTowType
+          x-used-in-legacy-notes-section: true
+          nullable: true
+        ringOnApproachMinutes:
+          description: Number of minutes driver must ring car owner before attending
+          type: integer
+          x-mapped-to: JobRingOnApproachMinutes
+          x-example-values: 0 means not required
+          nullable: true
+        service:
+          type: object
+          properties:
+            id:
+              type: integer
+              nullable: false
+          required:
+            - id
+          nullable: false
+        symptom:
+          type: object
+          properties:
+            code:
+              type: string
+              x-mapped-to: JobSymptomCode
+              nullable: true
+            description:
+              type: string
+              x-mapped-to: JobSymptomDescription
+              nullable: true
+          nullable: true
+        towedItem:
+          type: object
+          properties:
+            axleType:
+              type: string
+              x-mapped-to: JobTowedItemAxleType
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            desc:
+              type: string
+              x-mapped-to: JobTowedItemDesc
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            height:
+              type: number
+              x-mapped-to: JobTowedItemHeight
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            length:
+              type: number
+              x-mapped-to: JobTowedItemLength
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            weight:
+              type: integer
+              x-mapped-to: JobTowedItemWeight
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            width:
+              type: number
+              x-mapped-to: JobTowedItemWidth
+              x-used-in-legacy-notes-section: true
+              nullable: true
+          nullable: true
+        type:
+          description: Type of Job - redelivery or recovery
+          type: integer
+          x-mapped-to: JobType
+          x-example-values: |-
+            RecoveryJob(1)
+            RedeliveryJob(4)
+          nullable: true
+        vehicle:
+          type: object
+          properties:
+            axleType:
+              type: string
+              x-mapped-to: JobVehicleAxleType
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            type:
+              type: integer
+              x-mapped-to: JobVehicleClass
+              description: >-
+                The type of vehicle will indicate the kind of damage image to
+                draw onto for a vehicle condition report
+              x-example-values: |-
+                Bike(0)
+                Car(1)
+                Caravan(2)
+                Coach(3)
+                Truck(4)
+                Van(5)
+              nullable: true
+            colour:
+              type: string
+              x-mapped-to: JobVehicleColour
+              nullable: true
+            contents:
+              type: string
+              x-mapped-to: JobVehicleContents
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            engineDetails:
+              type: string
+              x-mapped-to: JobVehicleEngineDetails
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            fuelType:
+              type: string
+              x-mapped-to: JobVehicleFuelType
+              nullable: true
+            grossWeight:
+              type: string
+              x-mapped-to: JobVehicleGrossWeight
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            hasTrailer:
+              type: boolean
+              x-mapped-to: JobVehicleHasTrailer
+              nullable: true
+            height:
+              type: string
+              x-mapped-to: JobVehicleHeight
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            length:
+              type: string
+              x-mapped-to: JobVehicleLength
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            make:
+              type: string
+              x-mapped-to: JobVehicleMake
+              nullable: true
+            model:
+              type: string
+              x-mapped-to: JobVehicleModel
+              nullable: true
+            noOfDoors:
+              type: string
+              x-mapped-to: JobVehicleNoOfDoors
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            odometer:
+              type: string
+              x-mapped-to: JobVehicleOdometer
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            registration:
+              type: string
+              x-mapped-to: JobVehicleRegistration
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            trailerType:
+              type: string
+              x-mapped-to: JobVehicleTrailerType
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            transmissionType:
+              type: integer
+              x-mapped-to: JobVehicleTransmissionType
+              x-example-values: |-
+                Manual(0)
+                Auto(1)
+                Manual_4WD(2)
+                Auto_4WD(3)
+              nullable: true
+            vin:
+              type: string
+              x-mapped-to: JobVehicleVIN
+              x-used-in-legacy-notes-section: true
+              nullable: true
+            width:
+              type: string
+              x-mapped-to: JobVehicleWidth
+              x-used-in-legacy-notes-section: true
+              nullable: true
+          nullable: true
+        vvrfAccountId:
+          type: integer
+          x-mapped-to: JobVVRFAccountId
+          nullable: true
+      required:
+        - docId
+        - isCancelled
+        - isRedeployable
+        - driverUid
+        - dateTime
+        - areImagesRequired
+        - service
