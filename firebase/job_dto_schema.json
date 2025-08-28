@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.0.2"
+    "version": "1.0.3"
   },
   "paths": {},
   "components": {
@@ -84,6 +84,11 @@
                 "x-mapped-to": "JobDestinationCode",
                 "nullable": true
               },
+              "description": {
+                "type": "string",
+                "x-mapped-to": "JobDestination",
+                "nullable": true
+              },
               "gps": {
                 "type": "object",
                 "x-mapped-to": "NEW",
@@ -146,6 +151,11 @@
                 "x-mapped-to": "JobLocationCode",
                 "nullable": true
               },
+              "description": {
+                "type": "string",
+                "x-mapped-to": "JobLocationDescription",
+                "nullable": true
+              },
               "gps": {
                 "type": "object",
                 "x-mapped-to": "NEW",
@@ -164,7 +174,7 @@
           "orderNumber": {
             "type": "string",
             "x-mapped-to": "JobOrderNumber",
-            "nullable": true
+            "nullable": false
           },
           "owner": {
             "type": "object",
@@ -288,7 +298,7 @@
                 "x-used-in-legacy-notes-section": true,
                 "nullable": true
               },
-              "desc": {
+              "description": {
                 "type": "string",
                 "x-mapped-to": "JobTowedItemDesc",
                 "x-used-in-legacy-notes-section": true,
