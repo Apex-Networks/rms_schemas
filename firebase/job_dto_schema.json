@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   "paths": {},
   "components": {
@@ -284,6 +284,11 @@
               "code": {
                 "type": "string",
                 "x-mapped-to": "JobSymptomCode",
+                "nullable": true
+              },
+              "description": {
+                "type": "string",
+                "x-mapped-to": "JobSymptomDescription",
                 "nullable": true
               }
             },
