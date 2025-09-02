@@ -13,32 +13,38 @@
           "driverId": {
             "type": "integer",
             "description": "Unique identifier for the driver",
-            "nullable": false
+            "nullable": false,
+            "example": 3
           },
           "driverUid": {
             "type": "string",
             "description": "Driver's unique identifier string",
-            "nullable": false
+            "nullable": false,
+            "example": "000001-3"
           },
           "driverName": {
             "type": "string",
             "description": "Driver's display name",
-            "nullable": false
+            "nullable": false,
+            "example": "Sandra Evans"
           },
           "installationCode": {
             "type": "string",
             "description": "Installation code for the driver's setup",
-            "nullable": false
+            "nullable": false,
+            "example": "000001"
           },
           "login": {
             "type": "string",
             "description": "Driver's login identifier",
-            "nullable": false
+            "nullable": false,
+            "example": "000001-sandra@test.com"
           },
           "driverAccessToken": {
             "type": "string",
             "description": "Access token for driver authentication",
-            "nullable": false
+            "nullable": false,
+            "example": "b5f9824e20c1cfe9846d24ef2623574efb4a0ba210aa43e2ff4ab9e5bd40f372"
           },
           "user_id": {
             "type": "string",
