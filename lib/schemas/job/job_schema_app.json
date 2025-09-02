@@ -1,0 +1,74 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Job (App Extended)",
+    "version": "1.0.3",
+    "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Status": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/StatusValues"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "required": ["value"]
+      },
+      "StatusValues": {
+        "type": "string",
+        "enum": [
+          "NONE",
+          "RE_DEPLOYED",
+          "ACCEPTED",
+          "ON_ROUTE",
+          "AT_SCENE",
+          "CLEAR",
+          "COMPLETE",
+          "CANCELLED"
+        ]
+      },
+      "JobAcceptance": {
+        "type": "object",
+        "properties": {
+          "eta": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": ["eta"]
+      },
+      "UserJobData": {
+        "type": "object",
+        "properties": {
+          "statusHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Status",
+              "nullable": true
+            },
+            "default": [],
+            "nullable": false,
+            "x-dart-annotations": ["@Default([])"]
+          },
+          "jobAcceptance": {
+            "$ref": "#/components/schemas/JobAcceptance",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "JWT Claims",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "JWTClaims": {
+        "type": "object",
+        "properties": {
+          "driverId": {
+            "type": "integer",
+            "description": "Unique identifier for the driver",
+            "nullable": false
+          },
+          "driverUid": {
+            "type": "string",
+            "description": "Driver's unique identifier string",
+            "nullable": false
+          },
+          "driverName": {
+            "type": "string",
+            "description": "Driver's display name",
+            "nullable": false
+          },
+          "installationCode": {
+            "type": "string",
+            "description": "Installation code for the driver's setup",
+            "nullable": false
+          },
+          "login": {
+            "type": "string",
+            "description": "Driver's login identifier",
+            "nullable": false
+          },
+          "driverAccessToken": {
+            "type": "string",
+            "description": "Access token for driver authentication",
+            "nullable": false
+          },
+          "user_id": {
+            "type": "string",
+            "description": "User ID from the JWT claims",
+            "nullable": false
+          }
+        },
+        "required": [
+          "driverId",
+          "driverUid",
+          "driverName",
+          "installationCode",
+          "login",
+          "driverAccessToken",
+          "user_id"
+        ]
+      }
+    }
+  }
+}

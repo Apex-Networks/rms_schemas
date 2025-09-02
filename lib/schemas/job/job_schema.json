@@ -467,12 +467,13 @@
           }
         },
         "required": [
+          "areImagesRequired",
+          "dateTime",
           "docId",
+          "driverUid",
           "isCancelled",
           "isRedeployable",
-          "driverUid",
-          "dateTime",
-          "areImagesRequired",
+          "orderNumber",
           "service"
         ]
       }

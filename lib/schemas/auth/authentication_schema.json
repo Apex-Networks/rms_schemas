@@ -1,0 +1,236 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ApexNetworks.RmsLite API",
+    "description": "Documents the REST API",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://rms-mobile-dev.apex-rms.com"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "ApexNetworks.RmsLite.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "tags": [
+          "ApexNetworks.RmsLite.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/authorization/Login": {
+      "put": {
+        "tags": [
+          "Authorization Commands"
+        ],
+        "description": "Attempt to Log In",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/authorization/Logout": {
+      "put": {
+        "tags": [
+          "Authorization Commands"
+        ],
+        "description": "Attempt to Log Out",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoutResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tracking/Login": {
+      "post": {
+        "tags": [
+          "Tracking Commands"
+        ],
+        "description": "Attempt to Log In",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTrackingRecordRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTrackingRecordResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateTrackingRecordRequestDTO": {
+        "required": [
+          "latitude",
+          "longitude",
+          "trackingDateTime"
+        ],
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "speed": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "bearing": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "trackingDateTime": {
+            "minLength": 1,
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTrackingRecordResponseDTO": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "LoginRequestDTO": {
+        "required": [
+          "login",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "login": {
+            "minLength": 1,
+            "pattern": "^\\d{6,7}-[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            "type": "string",
+            "description": "Login identifier, expected format: XXXXXX-YYYYYY@ZZZZZZZ.ABC\r\n- Starts with 6 or 7 digits.\r\n- Followed by a hyphen (-).\r\n- Ends with a valid email address."
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Login Password"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Data Transfer Object for Login Request",
+        "example": {
+          "Login": "123456-user@example.com",
+          "Password": "P@ssw0rd123"
+        }
+      },
+      "LoginResponseDTO": {
+        "type": "object",
+        "properties": {
+          "jsonWebToken": {
+            "type": "string",
+            "description": "The Json Web Access Token returned"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Data Transfer Object for Login Response"
+      },
+      "LogoutRequestDTO": {
+        "required": [
+          "driverAccessToken",
+          "driverLogin"
+        ],
+        "type": "object",
+        "properties": {
+          "driverLogin": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The User ID of the Driver"
+          },
+          "driverAccessToken": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The Json Web Access Token returned"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LogoutResponseDTO": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}
