@@ -16,6 +16,11 @@
             "x-used-in-legacy-notes-section": true,
             "nullable": true
           },
+          "agentCode": {
+            "type": "string",
+            "x-mapped-to": "????",
+            "nullable": false
+          },
           "areImagesRequired": {
             "type": "boolean",
             "x-mapped-to": "JobAreImagesRequired",
@@ -467,6 +472,7 @@
           }
         },
         "required": [
+          "agentCode",
           "areImagesRequired",
           "dateTime",
           "docId",
