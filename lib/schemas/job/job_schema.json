@@ -248,7 +248,7 @@
             },
             "nullable": true
           },
-          "provider": {
+          "account": {
             "type": "string",
             "x-mapped-to": "ProviderName",
             "nullable": true
