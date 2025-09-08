@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.0.7"
+    "version": "1.0.8"
   },
   "paths": {},
   "components": {
@@ -15,11 +15,6 @@
             "x-mapped-to": "JobAnsNotes",
             "x-used-in-legacy-notes-section": true,
             "nullable": true
-          },
-          "agentCode": {
-            "type": "string",
-            "x-mapped-to": "????",
-            "nullable": false
           },
           "areImagesRequired": {
             "type": "boolean",
@@ -63,7 +58,7 @@
             "x-mapped-to": "RCREmailAddress",
             "nullable": true
           },
-          "contractCode": {
+          "agentCode": {
             "type": "string",
             "x-mapped-to": "JobContractCode",
             "nullable": true
