@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job (App Extended)",
-    "version": "1.0.3",
+    "version": "1.0.9",
     "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
   },
   "paths": {},
@@ -16,11 +16,10 @@
           },
           "timestamp": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           }
         },
-        "required": ["value"]
+        "required": ["value", "timestamp"]
       },
       "StatusValues": {
         "type": "string",
