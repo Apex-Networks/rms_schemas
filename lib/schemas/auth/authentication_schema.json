@@ -3,7 +3,7 @@
   "info": {
     "title": "ApexNetworks.RmsLite API",
     "description": "Documents the REST API",
-    "version": "v1"
+    "version": "v2"
   },
   "servers": [
     {
@@ -173,7 +173,8 @@
       "LoginRequestDTO": {
         "required": [
           "login",
-          "password"
+          "password",
+          "locale"
         ],
         "type": "object",
         "properties": {
@@ -187,13 +188,19 @@
             "minLength": 1,
             "type": "string",
             "description": "Login Password"
+          },
+          "locale": {
+            "minLength": 2,
+            "type": "string",
+            "description": "Locale for localization, e.g., 'en', 'fr', 'es'."
           }
         },
         "additionalProperties": false,
         "description": "Data Transfer Object for Login Request",
         "example": {
-          "Login": "123456-user@example.com",
-          "Password": "P@ssw0rd123"
+          "login": "123456-user@example.com",
+          "password": "P@ssw0rd123",
+          "locale": "en"
         }
       },
       "LoginResponseDTO": {
