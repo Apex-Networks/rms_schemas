@@ -46,6 +46,12 @@
             "nullable": false,
             "example": "b5f9824e20c1cfe9846d24ef2623574efb4a0ba210aa43e2ff4ab9e5bd40f372"
           },
+          "appVariant": {
+            "type": "string",
+            "description": "Application variant - rms, rmsLitePlus, rmsLite",
+            "nullable": false,
+            "enum": ["rms", "rmsLitePlus", "rmsLite"]
+          },
           "user_id": {
             "type": "string",
             "description": "User ID from the JWT claims",
@@ -59,6 +65,7 @@
           "installationCode",
           "login",
           "driverAccessToken",
+          "appVariant",
           "user_id"
         ]
       }

@@ -1,6 +1,6 @@
 name: rms_schemas
 description: RMS schema definitions.
-version: 1.0.10
+version: 1.0.11
 repository: https://github.com/Apex-Networks/rms_schemas
 
 environment:
