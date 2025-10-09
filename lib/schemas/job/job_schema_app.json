@@ -24,25 +24,42 @@
       "StatusValues": {
         "type": "string",
         "enum": [
-          "NONE",
-          "RE_DEPLOYED",
-          "ACCEPTED",
-          "ON_ROUTE",
-          "AT_SCENE",
-          "CLEAR",
-          "COMPLETE",
-          "CANCELLED"
+          "none",
+          "reDeployed",
+          "accepted",
+          "onRoute",
+          "atScene",
+          "clear",
+          "complete",
+          "cancelled"
         ]
       },
       "JobRejectionReasonValues": {
         "type": "string",
         "enum": [
-          "ALREADY_ASSIGNED_ELSEWHERE",
-          "INSUFFICIENT_EQUIPMENT",
-          "OUT_OF_COVERAGE_AREA",
-          "PERSONAL_EMERGENCY",
-          "OTHER"
-        ]
+          "nightControl",
+          "tooBusyToDeal",
+          "outOfArea",
+          "extremeWeatherConditions",
+          "extremeTrafficConditions",
+          "noVehiclesFacilitiesAvailable",
+          "noStaffAvailable",
+          "inDisputeWithOrganisationOrMember",
+          "unableToAttendWithinEta",
+          "unableToDoRecoveryAfterRoadsideAssist",
+          "temporarilyUnavailableOrOffDutyOrClosed",
+          "guaranteeOfPaymentNotGiven",
+          "noLicenseForThisClass",
+          "outOfDriverHours",
+          "unableToDoJobOrSupplyParts",
+          "alreadyWorkingForThisOrganisation",
+          "telephoneOrModemNoAnswer",
+          "telephoneOrModemRepeatedlyEngaged",
+          "telephoneOrModemUnobtainable",
+          "passedToFitter",
+          "retransmitRequest"
+        ],
+        "description": "Reasons why a job may be refused by an agent or provider."
       },
       "JobAcceptance": {
         "type": "object",
