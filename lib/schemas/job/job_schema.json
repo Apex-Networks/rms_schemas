@@ -2,11 +2,16 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.0.12"
+    "version": "1.0.13"
   },
   "paths": {},
   "components": {
     "schemas": {
+      "schemaVersion": {
+        "type": "string",
+        "default": "1.0.13",
+        "nullable": true
+      },
       "Job": {
         "type": "object",
         "properties": {

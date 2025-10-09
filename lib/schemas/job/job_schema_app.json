@@ -2,12 +2,40 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job (App Extended)",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
   },
   "paths": {},
   "components": {
     "schemas": {
+      "UserJobData": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "default": "1.0.13",
+            "nullable": true
+          },
+          "statusHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Status",
+              "nullable": true
+            },
+            "default": [],
+            "nullable": false,
+            "x-dart-annotations": ["@Default([])"]
+          },
+          "jobAcceptance": {
+            "$ref": "#/components/schemas/JobAcceptance",
+            "nullable": true
+          },
+          "jobRejection": {
+            "$ref": "#/components/schemas/JobRejectionReasonValues",
+            "nullable": true
+          }
+        }
+      },
       "Status": {
         "type": "object",
         "properties": {
@@ -75,29 +103,6 @@
           }
         },
         "required": ["eta"]
-      },
-      "UserJobData": {
-        "type": "object",
-        "properties": {
-          "statusHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Status",
-              "nullable": true
-            },
-            "default": [],
-            "nullable": false,
-            "x-dart-annotations": ["@Default([])"]
-          },
-          "jobAcceptance": {
-            "$ref": "#/components/schemas/JobAcceptance",
-            "nullable": true
-          },
-          "jobRejection": {
-            "$ref": "#/components/schemas/JobRejectionReasonValues",
-            "nullable": true
-          }
-        }
       }
     }
   }
