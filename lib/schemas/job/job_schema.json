@@ -7,14 +7,14 @@
   "paths": {},
   "components": {
     "schemas": {
-      "schemaVersion": {
-        "type": "string",
-        "default": "1.0.13",
-        "nullable": true
-      },
       "Job": {
         "type": "object",
         "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "default": "1.0.13",
+            "nullable": true
+          },
           "ansNotes": {
             "type": "string",
             "x-mapped-to": "JobAnsNotes",
