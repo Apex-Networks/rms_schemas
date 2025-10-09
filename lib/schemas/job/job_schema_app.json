@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job (App Extended)",
-    "version": "1.0.9",
+    "version": "1.0.12",
     "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
   },
   "paths": {},
@@ -32,6 +32,16 @@
           "CLEAR",
           "COMPLETE",
           "CANCELLED"
+        ]
+      },
+      "JobRejectionReasonValues": {
+        "type": "string",
+        "enum": [
+          "ALREADY_ASSIGNED_ELSEWHERE",
+          "INSUFFICIENT_EQUIPMENT",
+          "OUT_OF_COVERAGE_AREA",
+          "PERSONAL_EMERGENCY",
+          "OTHER"
         ]
       },
       "JobAcceptance": {
@@ -64,6 +74,10 @@
           },
           "jobAcceptance": {
             "$ref": "#/components/schemas/JobAcceptance",
+            "nullable": true
+          },
+          "jobRejection": {
+            "$ref": "#/components/schemas/JobRejectionReasonValues",
             "nullable": true
           }
         }
