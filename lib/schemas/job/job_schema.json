@@ -12,8 +12,7 @@
         "properties": {
           "schemaVersion": {
             "type": "string",
-            "default": "1.0.13",
-            "nullable": true
+            "nullable": false
           },
           "ansNotes": {
             "type": "string",
@@ -480,7 +479,8 @@
           "isCancelled",
           "isRedeployable",
           "orderNumber",
-          "service"
+          "service",
+          "schemaVersion"
         ]
       }
     }
