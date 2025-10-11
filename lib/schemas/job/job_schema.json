@@ -2,7 +2,8 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.0.13"
+    "version": "1.1.0",
+    "description": "Use this schema for sending jobs to Firebase Firestore"
   },
   "paths": {},
   "components": {
@@ -10,9 +11,11 @@
       "Job": {
         "type": "object",
         "properties": {
-          "schemaVersion": {
+          "rmsSchemaVersion": {
             "type": "string",
-            "nullable": false
+            "nullable": false,
+            "description": "The rms_schema repository tag / version",
+            "example": "1.1.0"
           },
           "ansNotes": {
             "type": "string",
@@ -105,7 +108,7 @@
           "docId": {
             "type": "string",
             "x-mapped-to": "NEW",
-            "example": "<job-id>-<driver-uid>-<service-id> although I realise that an ANS job does not have a job id so please come up with a suitable unique identifier.",
+            "description": "Example: <job-id>-<driver-uid>-<service-id> although I realise that an ANS job does not have a job id so please come up with a suitable unique identifier.",
             "nullable": false
           },
           "driverUid": {
@@ -129,7 +132,7 @@
           "id": {
             "type": "string",
             "x-mapped-to": "JobId",
-            "example": "ANS jobs will be null while RMS jobs will be populated",
+            "description": "Note: ANS jobs will be null while RMS jobs will be populated",
             "nullable": true
           },
           "isCancelled": {
@@ -266,7 +269,7 @@
           "ringOnApproachMinutes": {
             "type": "integer",
             "x-mapped-to": "JobRingOnApproachMinutes",
-            "x-example-values": "0 means not required",
+            "description": "Note: 0 means not required",
             "nullable": true
           },
           "service": {
@@ -346,7 +349,7 @@
           "type": {
             "type": "integer",
             "x-mapped-to": "JobType",
-            "x-example-values": "RecoveryJob(1)\nRedeliveryJob(4)",
+            "description": "Example: RecoveryJob(1), RedeliveryJob(4)",
             "nullable": true
           },
           "vehicle": {
@@ -361,7 +364,7 @@
               "type": {
                 "type": "integer",
                 "x-mapped-to": "JobVehicleClass",
-                "x-example-values": "Bike(0)\nCar(1)\nCaravan(2)\nCoach(3)\nTruck(4)\nVan(5)",
+                "description": "Example: Bike(0), Car(1), Caravan(2), Coach(3), Truck(4), Van(5)",
                 "nullable": true
               },
               "colour": {
@@ -446,7 +449,7 @@
               "transmissionType": {
                 "type": "integer",
                 "x-mapped-to": "JobVehicleTransmissionType",
-                "x-example-values": "Manual(0)\nAuto(1)\nManual_4WD(2)\nAuto_4WD(3)",
+                "description": "Example: Manual(0),  Auto(1), Manual_4WD(2), Auto_4WD(3)",
                 "nullable": true
               },
               "vin": {
@@ -480,7 +483,7 @@
           "isRedeployable",
           "orderNumber",
           "service",
-          "schemaVersion"
+          "rmsSchemaVersion"
         ]
       }
     }

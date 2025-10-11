@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job (App Extended)",
-    "version": "1.0.13",
+    "version": "1.1.0",
     "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
   },
   "paths": {},
@@ -11,9 +11,11 @@
       "UserJobData": {
         "type": "object",
         "properties": {
-          "schemaVersion": {
+          "rmsSchemaVersion": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
           },
           "statusHistory": {
             "type": "array",
