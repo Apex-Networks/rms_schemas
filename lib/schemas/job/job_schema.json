@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Use this schema for sending jobs to Firebase Firestore"
   },
   "paths": {},
@@ -346,10 +346,8 @@
             },
             "nullable": true
           },
-          "type": {
-            "type": "integer",
-            "x-mapped-to": "JobType",
-            "description": "Example: RecoveryJob(1), RedeliveryJob(4)",
+          "jobType": {
+            "$ref": "#/components/schemas/JobTypeValues",
             "nullable": true
           },
           "vehicle": {
@@ -362,9 +360,7 @@
                 "nullable": true
               },
               "type": {
-                "type": "integer",
-                "x-mapped-to": "JobVehicleClass",
-                "description": "Example: Bike(0), Car(1), Caravan(2), Coach(3), Truck(4), Van(5)",
+                "$ref": "#/components/schemas/VehicleTypeValues",
                 "nullable": true
               },
               "colour": {
@@ -447,9 +443,7 @@
                 "nullable": true
               },
               "transmissionType": {
-                "type": "integer",
-                "x-mapped-to": "JobVehicleTransmissionType",
-                "description": "Example: Manual(0),  Auto(1), Manual_4WD(2), Auto_4WD(3)",
+                "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
                 "nullable": true
               },
               "vin": {
@@ -484,6 +478,27 @@
           "orderNumber",
           "service",
           "rmsSchemaVersion"
+        ]
+      },
+      "JobTypeValues": {
+        "type": "string",
+        "enum": [
+          "recovery",
+          "redelivery"
+        ]
+      },
+      "VehicleTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleClass",
+        "enum": [
+          "bike","car", "caravan", "coach", "truck", "van"
+        ]
+      },
+      "VehicleTransmissionTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleTransmissionType",
+        "enum": [
+          "manual",  "auto", "manual_4wd", "auto_4wd"
         ]
       }
     }
