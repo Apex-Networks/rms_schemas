@@ -17,6 +17,14 @@
             "description": "The schema version of this repository",
             "example": "1.1.0"
           },
+          "jobAcceptance": {
+            "$ref": "#/components/schemas/JobAcceptance",
+            "nullable": true
+          },
+          "jobRejection": {
+            "$ref": "#/components/schemas/JobRejectionReasonValues",
+            "nullable": true
+          },
           "statusHistory": {
             "type": "array",
             "items": {
@@ -26,14 +34,6 @@
             "default": [],
             "nullable": false,
             "x-dart-annotations": ["@Default([])"]
-          },
-          "jobAcceptance": {
-            "$ref": "#/components/schemas/JobAcceptance",
-            "nullable": true
-          },
-          "jobRejection": {
-            "$ref": "#/components/schemas/JobRejectionReasonValues",
-            "nullable": true
           }
         }
       },
@@ -54,7 +54,7 @@
         "type": "string",
         "enum": [
           "none",
-          "reDeployed",
+          "redeployed",
           "accepted",
           "onRoute",
           "atScene",
