@@ -8,7 +8,7 @@
   "paths": {},
   "components": {
     "schemas": {
-      "UserJobData": {
+      "DriverJobData": {
         "type": "object",
         "properties": {
           "rmsSchemaVersion": {
