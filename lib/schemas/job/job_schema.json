@@ -17,6 +17,16 @@
             "description": "The rms_schema repository tag / version",
             "example": "1.1.0"
           },
+          "account": {
+            "type": "string",
+            "x-mapped-to": "ProviderName",
+            "nullable": true
+          },
+          "agentCode": {
+            "type": "string",
+            "x-mapped-to": "JobContractCode",
+            "nullable": true
+          },
           "ansNotes": {
             "type": "string",
             "x-mapped-to": "JobAnsNotes",
@@ -63,11 +73,6 @@
           "conditionReportEmailAddress": {
             "type": "string",
             "x-mapped-to": "RCREmailAddress",
-            "nullable": true
-          },
-          "agentCode": {
-            "type": "string",
-            "x-mapped-to": "JobContractCode",
             "nullable": true
           },
           "controllerContactDetails": {
@@ -123,6 +128,10 @@
             "x-mapped-to": "NEW",
             "nullable": true
           },
+          "eventType": {
+            "$ref": "#/components/schemas/EventTypeValues",
+            "nullable": true
+          },
           "hasSpecialNeeds": {
             "type": "boolean",
             "x-mapped-to": "JobHasSpecialNeeds",
@@ -133,6 +142,11 @@
             "type": "string",
             "x-mapped-to": "JobId",
             "description": "Note: ANS jobs will be null while RMS jobs will be populated",
+            "nullable": true
+          },
+          "isAnsJob": {
+            "type": "boolean",
+            "x-dart-annotations": ["@Default(false)"],
             "nullable": true
           },
           "isCancelled": {
@@ -253,11 +267,6 @@
                 "nullable": true
               }
             },
-            "nullable": true
-          },
-          "account": {
-            "type": "string",
-            "x-mapped-to": "ProviderName",
             "nullable": true
           },
           "requiredTowType": {
@@ -480,18 +489,17 @@
           "rmsSchemaVersion"
         ]
       },
+      "EventTypeValues": {
+        "type": "string",
+        "enum": [
+          "newJob", "updatedJob", "cancelledJob", "acceptedJob"
+        ],
+        "x-dart-annotations": ["@Default(EventType.acceptedJob)"]
+      },
       "JobTypeValues": {
         "type": "string",
         "enum": [
-          "recovery",
-          "redelivery"
-        ]
-      },
-      "VehicleTypeValues": {
-        "type": "string",
-        "x-mapped-to": "JobVehicleClass",
-        "enum": [
-          "bike","car", "caravan", "coach", "truck", "van"
+          "recovery", "redelivery"
         ]
       },
       "VehicleTransmissionTypeValues": {
@@ -499,6 +507,13 @@
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
           "manual",  "auto", "manual_4wd", "auto_4wd"
+        ]
+      },
+      "VehicleTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleClass",
+        "enum": [
+          "bike","car", "caravan", "coach", "truck", "van"
         ]
       }
     }
