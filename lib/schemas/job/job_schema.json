@@ -346,7 +346,7 @@
             },
             "nullable": true
           },
-          "jobType": {
+          "type": {
             "$ref": "#/components/schemas/JobTypeValues",
             "nullable": true
           },
