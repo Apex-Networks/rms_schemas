@@ -141,7 +141,7 @@
           "id": {
             "type": "string",
             "x-mapped-to": "JobId",
-            "description": "Note: ANS jobs will be null while RMS jobs will be populated",
+            "description": "The job id - note that an ANS job does not have a job id",
             "nullable": true
           },
           "isCancelled": {
