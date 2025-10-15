@@ -384,8 +384,7 @@
                 "nullable": true
               },
               "fuelType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleFuelType",
+                "$ref": "#/components/schemas/VehicleFuelTypeValues",
                 "nullable": true
               },
               "grossWeight": {
@@ -493,6 +492,13 @@
         "type": "string",
         "enum": [
           "recovery", "redelivery"
+        ]
+      },
+      "VehicleFuelTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleFuelType",
+        "enum": [
+          "diesel", "petrol", "ev", "hybrid", "hydrogen", "lpg", "other"
         ]
       },
       "VehicleTransmissionTypeValues": {
