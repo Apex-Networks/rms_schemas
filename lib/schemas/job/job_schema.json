@@ -487,8 +487,7 @@
         "type": "string",
         "enum": [
           "newJob", "updatedJob", "cancelledJob", "acceptedJob"
-        ],
-        "default": ["newJob"]
+        ]
       },
       "JobTypeValues": {
         "type": "string",
