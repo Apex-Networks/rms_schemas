@@ -113,7 +113,7 @@
           "docId": {
             "type": "string",
             "x-mapped-to": "NEW",
-            "description": "Example: <job-id>-<driver-uid>-<service-id> although I realise that an ANS job does not have a job id so please come up with a suitable unique identifier.",
+            "description": "The unique document id for this job in Firestore",
             "nullable": false
           },
           "driverUid": {
