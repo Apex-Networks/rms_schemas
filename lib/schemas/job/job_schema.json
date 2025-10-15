@@ -273,7 +273,6 @@
           "ringOnApproachMinutes": {
             "type": "integer",
             "x-mapped-to": "JobRingOnApproachMinutes",
-            "description": "Note: 0 means not required",
             "nullable": true
           },
           "service": {
