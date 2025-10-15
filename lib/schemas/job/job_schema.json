@@ -144,11 +144,6 @@
             "description": "Note: ANS jobs will be null while RMS jobs will be populated",
             "nullable": true
           },
-          "isAnsJob": {
-            "type": "boolean",
-            "x-dart-annotations": ["@Default(false)"],
-            "nullable": true
-          },
           "isCancelled": {
             "type": "boolean",
             "x-mapped-to": "NEW",
