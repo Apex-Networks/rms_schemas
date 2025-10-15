@@ -113,7 +113,7 @@
           "docId": {
             "type": "string",
             "x-mapped-to": "NEW",
-            "description": "The unique document id for this job in Firestore",
+            "description": "The unique document id for this job in Firebase Firestore",
             "nullable": false
           },
           "driverUid": {
