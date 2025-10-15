@@ -499,7 +499,7 @@
         "type": "string",
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
-          "manual",  "auto", "manual_4wd", "auto_4wd"
+          "manual",  "auto", "manual_4wd", "auto_4wd", "unknown"
         ]
       },
       "VehicleTypeValues": {
