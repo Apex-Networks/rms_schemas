@@ -349,8 +349,8 @@
             },
             "nullable": true
           },
-          "type": {
-            "$ref": "#/components/schemas/JobTypeValues",
+          "rmsJobType": {
+            "$ref": "#/components/schemas/RMSJobTypeValues",
             "nullable": true
           },
           "vehicle": {
@@ -489,7 +489,7 @@
           "newJob", "updatedJob", "cancelledJob", "acceptedJob"
         ]
       },
-      "JobTypeValues": {
+      "RMSJobTypeValues": {
         "type": "string",
         "enum": [
           "recovery", "redelivery"
