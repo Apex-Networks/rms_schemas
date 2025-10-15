@@ -487,8 +487,7 @@
         "type": "string",
         "enum": [
           "newJob", "updatedJob", "cancelledJob", "acceptedJob"
-        ],
-        "x-dart-annotations": ["@Default(EventType.acceptedJob)"]
+        ]
       },
       "JobTypeValues": {
         "type": "string",
