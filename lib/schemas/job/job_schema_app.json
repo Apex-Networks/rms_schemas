@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job (App Extended)",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
   },
   "paths": {},
@@ -17,16 +17,6 @@
             "description": "The schema version of this repository",
             "example": "1.1.0"
           },
-          "statusHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Status",
-              "nullable": true
-            },
-            "default": [],
-            "nullable": false,
-            "x-dart-annotations": ["@Default([])"]
-          },
           "jobAcceptance": {
             "$ref": "#/components/schemas/JobAcceptance",
             "nullable": true
@@ -34,6 +24,15 @@
           "jobRejection": {
             "$ref": "#/components/schemas/JobRejectionReasonValues",
             "nullable": true
+          },
+          "statusHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Status",
+              "nullable": true
+            },
+            "default": [],
+            "nullable": false
           }
         }
       },
@@ -54,7 +53,7 @@
         "type": "string",
         "enum": [
           "none",
-          "reDeployed",
+          "redeployed",
           "accepted",
           "onRoute",
           "atScene",

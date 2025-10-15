@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Use this schema for sending jobs to Firebase Firestore"
   },
   "paths": {},
@@ -16,6 +16,16 @@
             "nullable": false,
             "description": "The rms_schema repository tag / version",
             "example": "1.1.0"
+          },
+          "account": {
+            "type": "string",
+            "x-mapped-to": "ProviderName",
+            "nullable": true
+          },
+          "agentCode": {
+            "type": "string",
+            "x-mapped-to": "JobContractCode",
+            "nullable": true
           },
           "ansNotes": {
             "type": "string",
@@ -65,11 +75,6 @@
             "x-mapped-to": "RCREmailAddress",
             "nullable": true
           },
-          "agentCode": {
-            "type": "string",
-            "x-mapped-to": "JobContractCode",
-            "nullable": true
-          },
           "controllerContactDetails": {
             "type": "string",
             "x-mapped-to": "JobControllerContactDetails",
@@ -108,7 +113,7 @@
           "docId": {
             "type": "string",
             "x-mapped-to": "NEW",
-            "description": "Example: <job-id>-<driver-uid>-<service-id> although I realise that an ANS job does not have a job id so please come up with a suitable unique identifier.",
+            "description": "The unique document id for this job in Firebase Firestore",
             "nullable": false
           },
           "driverUid": {
@@ -123,6 +128,10 @@
             "x-mapped-to": "NEW",
             "nullable": true
           },
+          "eventType": {
+            "$ref": "#/components/schemas/EventTypeValues",
+            "nullable": true
+          },
           "hasSpecialNeeds": {
             "type": "boolean",
             "x-mapped-to": "JobHasSpecialNeeds",
@@ -132,7 +141,7 @@
           "id": {
             "type": "string",
             "x-mapped-to": "JobId",
-            "description": "Note: ANS jobs will be null while RMS jobs will be populated",
+            "description": "The job id - note that an ANS job does not have a job id",
             "nullable": true
           },
           "isCancelled": {
@@ -255,11 +264,6 @@
             },
             "nullable": true
           },
-          "account": {
-            "type": "string",
-            "x-mapped-to": "ProviderName",
-            "nullable": true
-          },
           "requiredTowType": {
             "type": "string",
             "x-mapped-to": "JobRequiredTowType",
@@ -269,7 +273,6 @@
           "ringOnApproachMinutes": {
             "type": "integer",
             "x-mapped-to": "JobRingOnApproachMinutes",
-            "description": "Note: 0 means not required",
             "nullable": true
           },
           "service": {
@@ -346,8 +349,8 @@
             },
             "nullable": true
           },
-          "type": {
-            "$ref": "#/components/schemas/JobTypeValues",
+          "rmsJobType": {
+            "$ref": "#/components/schemas/RMSJobTypeValues",
             "nullable": true
           },
           "vehicle": {
@@ -381,8 +384,7 @@
                 "nullable": true
               },
               "fuelType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleFuelType",
+                "$ref": "#/components/schemas/VehicleFuelTypeValues",
                 "nullable": true
               },
               "grossWeight": {
@@ -480,11 +482,30 @@
           "rmsSchemaVersion"
         ]
       },
-      "JobTypeValues": {
+      "EventTypeValues": {
         "type": "string",
         "enum": [
-          "recovery",
-          "redelivery"
+          "newJob", "updatedJob", "cancelledJob", "acceptedJob"
+        ]
+      },
+      "RMSJobTypeValues": {
+        "type": "string",
+        "enum": [
+          "recovery", "redelivery"
+        ]
+      },
+      "VehicleFuelTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleFuelType",
+        "enum": [
+          "diesel", "petrol", "ev", "hybrid", "hydrogen", "lpg", "other"
+        ]
+      },
+      "VehicleTransmissionTypeValues": {
+        "type": "string",
+        "x-mapped-to": "JobVehicleTransmissionType",
+        "enum": [
+          "manual",  "auto", "manual_4wd", "auto_4wd", "unknown"
         ]
       },
       "VehicleTypeValues": {
@@ -492,13 +513,6 @@
         "x-mapped-to": "JobVehicleClass",
         "enum": [
           "bike","car", "caravan", "coach", "truck", "van"
-        ]
-      },
-      "VehicleTransmissionTypeValues": {
-        "type": "string",
-        "x-mapped-to": "JobVehicleTransmissionType",
-        "enum": [
-          "manual",  "auto", "manual_4wd", "auto_4wd"
         ]
       }
     }
