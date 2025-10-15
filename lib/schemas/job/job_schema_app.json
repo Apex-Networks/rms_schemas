@@ -32,8 +32,7 @@
               "nullable": true
             },
             "default": [],
-            "nullable": false,
-            "x-dart-annotations": ["@Default([])"]
+            "nullable": false
           }
         }
       },
