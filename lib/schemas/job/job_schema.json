@@ -485,34 +485,53 @@
       "EventTypeValues": {
         "type": "string",
         "enum": [
-          "newJob", "updatedJob", "cancelledJob", "acceptedJob"
+          "newJob",
+          "updatedJob",
+          "cancelledJob",
+          "acceptedJob"
         ]
       },
       "RMSJobTypeValues": {
         "type": "string",
         "enum": [
-          "recovery", "redelivery"
+          "recovery",
+          "redelivery"
         ]
       },
       "VehicleFuelTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleFuelType",
         "enum": [
-          "diesel", "petrol", "ev", "hybrid", "hydrogen", "lpg", "other"
+          "diesel",
+          "petrol",
+          "ev",
+          "hybrid",
+          "hydrogen",
+          "lpg",
+          "other"
         ]
       },
       "VehicleTransmissionTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
-          "manual",  "auto", "manual_4wd", "auto_4wd", "unknown"
+          "manual",
+          "auto",
+          "manual_4wd",
+          "auto_4wd",
+          "unknown"
         ]
       },
       "VehicleTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleClass",
         "enum": [
-          "bike","car", "caravan", "coach", "truck", "van"
+          "bike",
+          "car",
+          "caravan",
+          "coach",
+          "truck",
+          "van"
         ]
       }
     }
