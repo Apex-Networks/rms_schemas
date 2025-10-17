@@ -11,15 +11,15 @@
       "UserUpdates": {
         "type": "object",
         "properties": {
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": true,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
+          },
           "jobs": {
             "type": "object",
             "properties": {
-              "rmsSchemaVersion": {
-                "type": "string",
-                "nullable": true,
-                "description": "The schema version of this repository",
-                "example": "1.1.0"
-              },
               "docId": {
                 "type": "string",
                 "description": "The unique document id for this job in Firebase Firestore",
