@@ -17,12 +17,25 @@
             "description": "The schema version of this repository",
             "example": "1.1.0"
           },
+          "docId": {
+            "type": "string",
+            "description": "The unique document id for this job in Firebase Firestore",
+            "nullable": true
+          },
+          "driverUid": {
+            "type": "string",
+            "nullable": true
+          },
           "jobAcceptance": {
             "$ref": "#/components/schemas/JobAcceptance",
             "nullable": true
           },
           "jobRejection": {
             "$ref": "#/components/schemas/JobRejectionReasonValues",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusValues",
             "nullable": true
           },
           "statusHistory": {
