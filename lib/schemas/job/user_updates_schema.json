@@ -80,80 +80,80 @@
             "type": "object",
             "properties": {}
           }
-        },
-        "Status": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "$ref": "#/components/schemas/StatusValues"
-            },
-            "timestamp": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          "required": [
-            "value",
-            "timestamp"
-          ]
-        },
-        "StatusValues": {
-          "type": "string",
-          "enum": [
-            "none",
-            "redeployed",
-            "accepted",
-            "onRoute",
-            "atScene",
-            "clear",
-            "complete",
-            "cancelled"
-          ]
-        },
-        "JobRejectionReasonValues": {
-          "type": "string",
-          "enum": [
-            "nightControl",
-            "tooBusyToDeal",
-            "outOfArea",
-            "extremeWeatherConditions",
-            "extremeTrafficConditions",
-            "noVehiclesFacilitiesAvailable",
-            "noStaffAvailable",
-            "inDisputeWithOrganisationOrMember",
-            "unableToAttendWithinEta",
-            "unableToDoRecoveryAfterRoadsideAssist",
-            "temporarilyUnavailableOrOffDutyOrClosed",
-            "guaranteeOfPaymentNotGiven",
-            "noLicenseForThisClass",
-            "outOfDriverHours",
-            "unableToDoJobOrSupplyParts",
-            "alreadyWorkingForThisOrganisation",
-            "telephoneOrModemNoAnswer",
-            "telephoneOrModemRepeatedlyEngaged",
-            "telephoneOrModemUnobtainable",
-            "passedToFitter",
-            "retransmitRequest"
-          ],
-          "description": "Reasons why a job may be refused by an agent or provider."
-        },
-        "JobAcceptance": {
-          "type": "object",
-          "properties": {
-            "eta": {
-              "type": "string",
-              "format": "date-time",
-              "x-firestore-type": "timestamp"
-            },
-            "note": {
-              "type": "string",
-              "nullable": true
-            }
-          },
-          "required": [
-            "eta"
-          ]
         }
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/StatusValues"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "value",
+          "timestamp"
+        ]
+      },
+      "StatusValues": {
+        "type": "string",
+        "enum": [
+          "none",
+          "redeployed",
+          "accepted",
+          "onRoute",
+          "atScene",
+          "clear",
+          "complete",
+          "cancelled"
+        ]
+      },
+      "JobRejectionReasonValues": {
+        "type": "string",
+        "enum": [
+          "nightControl",
+          "tooBusyToDeal",
+          "outOfArea",
+          "extremeWeatherConditions",
+          "extremeTrafficConditions",
+          "noVehiclesFacilitiesAvailable",
+          "noStaffAvailable",
+          "inDisputeWithOrganisationOrMember",
+          "unableToAttendWithinEta",
+          "unableToDoRecoveryAfterRoadsideAssist",
+          "temporarilyUnavailableOrOffDutyOrClosed",
+          "guaranteeOfPaymentNotGiven",
+          "noLicenseForThisClass",
+          "outOfDriverHours",
+          "unableToDoJobOrSupplyParts",
+          "alreadyWorkingForThisOrganisation",
+          "telephoneOrModemNoAnswer",
+          "telephoneOrModemRepeatedlyEngaged",
+          "telephoneOrModemUnobtainable",
+          "passedToFitter",
+          "retransmitRequest"
+        ],
+        "description": "Reasons why a job may be refused by an agent or provider."
+      },
+      "JobAcceptance": {
+        "type": "object",
+        "properties": {
+          "eta": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "eta"
+        ]
       }
     }
   }
