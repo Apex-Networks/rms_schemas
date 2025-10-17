@@ -8,7 +8,15 @@ This package provides JSON schema definitions for job DTOs and related data stru
 
 ## Schemas Included
 
-- **Job DTO Schema** (`lib/schemas/job_dto_schema.json`) - OpenAPI 3.0.3 schema for job data transfer objects
+### Job Schemas
+
+- **Job Schema** (`lib/schemas/job/job_schema.json`) - OpenAPI 3.0.3 schema for job data transfer objects
+- **User Updates Schema** (`lib/schemas/job/user_updates_schema.json`) - Schema for user job update operations
+
+### Authentication Schemas
+
+- **Authentication Schema** (`lib/schemas/auth/authentication_schema.json`) - Schema for authentication data structures
+- **JWT Claims Schema** (`lib/schemas/auth/jwt_claims_schema.json`) - Schema for JWT token claims
 
 ## Installation
 
