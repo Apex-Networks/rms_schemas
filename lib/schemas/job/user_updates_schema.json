@@ -17,6 +17,12 @@
             "description": "The schema version of this repository",
             "example": "1.1.0"
           },
+          "driverUid": {
+            "type": "string",
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
+            "nullable": true
+          },
           "jobs": {
             "type": "object",
             "properties": {
