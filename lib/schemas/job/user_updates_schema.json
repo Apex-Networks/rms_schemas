@@ -4,11 +4,11 @@
     "title": "Job (App Extended)",
     "version": "1.4.0",
     "description": "Use this schema when sending data from the app to Firebase to be consumed by the backend"
-  },
+ },
   "paths": {},
   "components": {
     "schemas": {
-      "UserUpdates": {
+      "Deltas": {
         "type": "object",
         "properties": {
           "rmsSchemaVersion": {
@@ -24,39 +24,8 @@
             "nullable": true
           },
           "jobs": {
-            "type": "object",
-            "properties": {
-              "docId": {
-                "type": "string",
-                "description": "The unique document id for this job in Firebase Firestore",
-                "nullable": true
-              },
-              "driverUid": {
-                "type": "string",
-                "nullable": true
-              },
-              "jobAcceptance": {
-                "$ref": "#/components/schemas/JobAcceptance",
-                "nullable": true
-              },
-              "jobRejection": {
-                "$ref": "#/components/schemas/JobRejectionReasonValues",
-                "nullable": true
-              },
-              "status": {
-                "$ref": "#/components/schemas/StatusValues",
-                "nullable": true
-              },
-              "statusHistory": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Status",
-                  "nullable": true
-                },
-                "default": [],
-                "nullable": false
-              }
-            }
+            "$ref": "#/components/schemas/UserJobUpdates",
+            "nullable": true
           },
           "activities": {
             "type": "object",
@@ -85,6 +54,42 @@
           "redFlashingLight": {
             "type": "object",
             "properties": {}
+          }
+        }
+      },
+      "UserJobUpdates": {
+        "type": "object",
+        "properties": {
+          "jobs": {
+            "type": "object",
+            "properties": {
+              "docId": {
+                "type": "string",
+                "description": "The unique document id for this job in Firebase Firestore",
+                "nullable": true
+              },
+              "jobAcceptance": {
+                "$ref": "#/components/schemas/JobAcceptance",
+                "nullable": true
+              },
+              "jobRejection": {
+                "$ref": "#/components/schemas/JobRejectionReasonValues",
+                "nullable": true
+              },
+              "status": {
+                "$ref": "#/components/schemas/StatusValues",
+                "nullable": true
+              },
+              "statusHistory": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Status",
+                  "nullable": true
+                },
+                "default": [],
+                "nullable": false
+              }
+            }
           }
         }
       },
