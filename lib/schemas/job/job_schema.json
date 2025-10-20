@@ -119,6 +119,8 @@
           "driverUid": {
             "type": "string",
             "x-mapped-to": "NEW",
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
             "nullable": false
           },
           "eta": {
