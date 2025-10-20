@@ -3,7 +3,7 @@
   "info": {
     "title": "Job",
     "version": "1.4.0",
-    "description": "Use this schema for sending jobs to Firebase Firestore"
+    "description": "Use this schema when sending data from the backend to Firebase to be consumed by the app"
   },
   "paths": {},
   "components": {

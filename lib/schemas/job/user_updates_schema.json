@@ -3,7 +3,7 @@
   "info": {
     "title": "Job (App Extended)",
     "version": "1.4.0",
-    "description": "Extended version of job_schema.json with app-specific fields. Do not use for backend code generation."
+    "description": "Use this schema when sending data from the app to Firebase to be consumed by the backend"
   },
   "paths": {},
   "components": {
