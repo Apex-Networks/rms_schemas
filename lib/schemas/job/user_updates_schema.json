@@ -81,10 +81,9 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Status",
-              "nullable": true
+              "nullable": false
             },
-            "default": [],
-            "nullable": false
+            "nullable": true
           }
         }
       },
