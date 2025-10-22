@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Job",
-    "version": "1.4.0",
+    "version": "2.0.0",
     "description": "Use this schema when sending data from the backend to Firebase to be consumed by the app"
   },
   "paths": {},
