@@ -469,6 +469,10 @@
             "type": "integer",
             "x-mapped-to": "JobVVRFAccountId",
             "nullable": true
+          },
+          "transmissionType": {
+            "$ref": "#/components/schemas/UserJobUpdates",
+            "nullable": true
           }
         },
         "required": [
@@ -534,6 +538,158 @@
           "coach",
           "truck",
           "van"
+        ]
+      },
+      "Deltas": {
+        "type": "object",
+        "properties": {
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": true,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
+          },
+          "driverUid": {
+            "type": "string",
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
+            "nullable": true
+          },
+          "jobs": {
+            "$ref": "#/components/schemas/UserJobUpdates",
+            "nullable": true
+          },
+          "activities": {
+            "type": "object",
+            "properties": {}
+          },
+          "vehicleCheck": {
+            "type": "object",
+            "properties": {}
+          },
+          "fuelEntry": {
+            "type": "object",
+            "properties": {}
+          },
+          "clockInOut": {
+            "type": "object",
+            "properties": {}
+          },
+          "messages": {
+            "type": "object",
+            "properties": {}
+          },
+          "forms": {
+            "type": "object",
+            "properties": {}
+          },
+          "redFlashingLight": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "UserJobUpdates": {
+        "type": "object",
+        "properties": {
+          "docId": {
+            "type": "string",
+            "description": "The unique document id for this job in Firebase Firestore",
+            "nullable": true
+          },
+          "jobAcceptance": {
+            "$ref": "#/components/schemas/JobAcceptance",
+            "nullable": true
+          },
+          "jobRejection": {
+            "$ref": "#/components/schemas/JobRejectionReasonValues",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusValues",
+            "nullable": true
+          },
+          "statusHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Status",
+              "nullable": false
+            },
+            "nullable": true
+          }
+        }
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/StatusValues"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "value",
+          "timestamp"
+        ]
+      },
+      "StatusValues": {
+        "type": "string",
+        "enum": [
+          "none",
+          "redeployed",
+          "accepted",
+          "onRoute",
+          "atScene",
+          "clear",
+          "complete",
+          "cancelled"
+        ]
+      },
+      "JobRejectionReasonValues": {
+        "type": "string",
+        "enum": [
+          "nightControl",
+          "tooBusyToDeal",
+          "outOfArea",
+          "extremeWeatherConditions",
+          "extremeTrafficConditions",
+          "noVehiclesFacilitiesAvailable",
+          "noStaffAvailable",
+          "inDisputeWithOrganisationOrMember",
+          "unableToAttendWithinEta",
+          "unableToDoRecoveryAfterRoadsideAssist",
+          "temporarilyUnavailableOrOffDutyOrClosed",
+          "guaranteeOfPaymentNotGiven",
+          "noLicenseForThisClass",
+          "outOfDriverHours",
+          "unableToDoJobOrSupplyParts",
+          "alreadyWorkingForThisOrganisation",
+          "telephoneOrModemNoAnswer",
+          "telephoneOrModemRepeatedlyEngaged",
+          "telephoneOrModemUnobtainable",
+          "passedToFitter",
+          "retransmitRequest"
+        ],
+        "description": "Reasons why a job may be refused by an agent or provider."
+      },
+      "JobAcceptance": {
+        "type": "object",
+        "properties": {
+          "eta": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "eta"
         ]
       }
     }

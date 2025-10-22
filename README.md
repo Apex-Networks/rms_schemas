@@ -8,10 +8,9 @@ This package provides JSON schema definitions for job DTOs and related data stru
 
 ## Schemas Included
 
-### Job Schemas
+### Firebase Schemas
 
-- **Job Schema** (`lib/schemas/job/job_schema.json`) - OpenAPI 3.0.3 schema for job data transfer objects
-- **User Updates Schema** (`lib/schemas/job/user_updates_schema.json`) - Schema for user job update operations
+- **Firebase Schema** (`lib/schemas/job/firebase_schema.json`) - OpenAPI 3.0.3 schema for Firebase Firestore data transfer objects
 
 ### Authentication Schemas
 
