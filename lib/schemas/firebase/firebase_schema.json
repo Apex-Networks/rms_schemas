@@ -470,7 +470,7 @@
             "x-mapped-to": "JobVVRFAccountId",
             "nullable": true
           },
-          "transmissionType": {
+          "userUpdates": {
             "$ref": "#/components/schemas/UserJobUpdates",
             "nullable": true
           }
