@@ -592,6 +592,11 @@
       "UserJobUpdates": {
         "type": "object",
         "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "docId": {
             "type": "string",
             "description": "The unique document id for this job in Firebase Firestore",
