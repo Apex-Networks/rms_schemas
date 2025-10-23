@@ -545,7 +545,8 @@
         "properties": {
           "timestamp": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "rmsSchemaVersion": {
             "type": "string",
@@ -591,8 +592,7 @@
             "type": "object",
             "properties": {}
           }
-        },
-        "required": ["timestamp"]
+        }
       },
       "UserJobUpdates": {
         "type": "object",
