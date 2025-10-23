@@ -545,8 +545,7 @@
         "properties": {
           "timestamp": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "rmsSchemaVersion": {
             "type": "string",
