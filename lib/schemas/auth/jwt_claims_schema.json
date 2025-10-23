@@ -2,7 +2,8 @@
   "openapi": "3.0.3",
   "info": {
     "title": "JWT Claims",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "description": "Use this schema when sending JWT Claims data from the backend to the app"
   },
   "paths": {},
   "components": {
@@ -18,9 +19,9 @@
           },
           "driverUid": {
             "type": "string",
-            "description": "Driver's unique identifier string",
-            "nullable": false,
-            "example": "000001-3"
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
+            "nullable": false
           },
           "driverName": {
             "type": "string",
