@@ -543,6 +543,11 @@
       "Deltas": {
         "type": "object",
         "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": true,
@@ -587,7 +592,8 @@
             "type": "object",
             "properties": {}
           }
-        }
+        },
+        "required": ["timestamp"]
       },
       "UserJobUpdates": {
         "type": "object",
