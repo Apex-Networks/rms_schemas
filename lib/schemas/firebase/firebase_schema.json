@@ -595,7 +595,7 @@
           "docId": {
             "type": "string",
             "description": "The unique document id for this job in Firebase Firestore",
-            "nullable": true
+            "nullable": false
           },
           "jobAcceptance": {
             "$ref": "#/components/schemas/JobAcceptance",
@@ -617,7 +617,8 @@
             },
             "nullable": true
           }
-        }
+        },
+        "required": ["docId"]
       },
       "Status": {
         "type": "object",
