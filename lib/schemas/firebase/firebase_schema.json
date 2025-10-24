@@ -144,25 +144,7 @@
             "nullable": false
           },
           "location": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobLocationCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobLocationDescription",
-                "nullable": true
-              },
-              "gps": {
-                "type": "object",
-                "x-mapped-to": "NEW",
-                "x-firestore-type": "geopoint",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobLocation",
             "nullable": true
           },
           "locationOfKeys": {
@@ -671,8 +653,7 @@
             "x-used-in-legacy-notes-section": true,
             "nullable": true
           }
-        },
-        "nullable": true
+        }
       },
       "JobDestination": {
         "type": "object",
@@ -693,8 +674,7 @@
             "x-firestore-type": "geopoint",
             "nullable": true
           }
-        },
-        "nullable": true
+        }
       },
       "JobService": {
         "type": "object",
@@ -706,8 +686,28 @@
         },
         "required": [
           "id"
-        ],
-        "nullable": false
+        ]
+      },
+      "Joblocation": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobLocationCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobLocationDescription",
+            "nullable": true
+          },
+          "gps": {
+            "type": "object",
+            "x-mapped-to": "NEW",
+            "x-firestore-type": "geopoint",
+            "nullable": true
+          }
+        }
       }
     }
   }
