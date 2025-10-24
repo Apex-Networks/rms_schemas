@@ -261,7 +261,7 @@
           },
          "service": {
             "$ref": "#/components/schemas/JobService",
-            "nullable": true
+            "nullable": false
           },
           "symptom": {
             "type": "object",
