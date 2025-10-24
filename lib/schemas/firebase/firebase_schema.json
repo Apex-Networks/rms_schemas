@@ -89,25 +89,7 @@
             "nullable": false
           },
           "destination": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobDestinationCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobDestination",
-                "nullable": true
-              },
-              "gps": {
-                "type": "object",
-                "x-mapped-to": "NEW",
-                "x-firestore-type": "geopoint",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobDestination",
             "nullable": true
           },
           "docId": {
@@ -696,6 +678,28 @@
             "format": "double",
             "x-mapped-to": "JobTowedItemWidth",
             "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "JobDestination": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobDestinationCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobDestination",
+            "nullable": true
+          },
+          "gps": {
+            "type": "object",
+            "x-mapped-to": "NEW",
+            "x-firestore-type": "geopoint",
             "nullable": true
           }
         },
