@@ -186,19 +186,7 @@
             "nullable": false
           },
           "symptom": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobSymptomCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobSymptomDescription",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobSymptom",
             "nullable": true
           },
           "towedItem": {
@@ -210,113 +198,7 @@
             "nullable": true
           },
           "vehicle": {
-            "type": "object",
-            "properties": {
-              "axleType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleAxleType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "type": {
-                "$ref": "#/components/schemas/JobVehicleTypeValues",
-                "nullable": true
-              },
-              "colour": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleColour",
-                "nullable": true
-              },
-              "contents": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleContents",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "engineDetails": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleEngineDetails",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "fuelType": {
-                "$ref": "#/components/schemas/JobVehicleFuelTypeValues",
-                "nullable": true
-              },
-              "grossWeight": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleGrossWeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "hasTrailer": {
-                "type": "boolean",
-                "x-mapped-to": "JobVehicleHasTrailer",
-                "nullable": true
-              },
-              "height": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleHeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "length": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleLength",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "make": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleMake",
-                "nullable": true
-              },
-              "model": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleModel",
-                "nullable": true
-              },
-              "numberOfDoors": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleNoOfDoors",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "odometer": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleOdometer",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "registration": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleRegistration",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "trailerType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleTrailerType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "transmissionType": {
-                "$ref": "#/components/schemas/JobVehicleTransmissionTypeValues",
-                "nullable": true
-              },
-              "vin": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleVIN",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "width": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleWidth",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobVehicle",
             "nullable": true
           },
           "vvrfAccountId": {
@@ -713,6 +595,130 @@
           "reason": {
             "type": "integer",
             "x-mapped-to": "JobPriorityReason",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
+      },
+      "JobSymptom": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobSymptomCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobSymptomDescription",
+            "nullable": true
+          }
+        }
+      },
+      "JobVehicle": {
+        "type": "object",
+        "properties": {
+          "axleType": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleAxleType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/JobVehicleTypeValues",
+            "nullable": true
+          },
+          "colour": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleColour",
+            "nullable": true
+          },
+          "contents": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleContents",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "engineDetails": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleEngineDetails",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "fuelType": {
+            "$ref": "#/components/schemas/JobVehicleFuelTypeValues",
+            "nullable": true
+          },
+          "grossWeight": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleGrossWeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "hasTrailer": {
+            "type": "boolean",
+            "x-mapped-to": "JobVehicleHasTrailer",
+            "nullable": true
+          },
+          "height": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleHeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "length": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleLength",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "make": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleMake",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleModel",
+            "nullable": true
+          },
+          "numberOfDoors": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleNoOfDoors",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "odometer": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleOdometer",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "registration": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleRegistration",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "trailerType": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleTrailerType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "transmissionType": {
+            "$ref": "#/components/schemas/JobVehicleTransmissionTypeValues",
+            "nullable": true
+          },
+          "vin": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleVIN",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "width": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleWidth",
             "x-used-in-legacy-notes-section": true,
             "nullable": true
           }
