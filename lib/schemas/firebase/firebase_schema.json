@@ -131,7 +131,7 @@
             "nullable": true
           },
           "eventType": {
-            "$ref": "#/components/schemas/EventTypeValues",
+            "$ref": "#/components/schemas/JobEventTypeValues",
             "nullable": true
           },
           "hasSpecialNeeds": {
@@ -208,7 +208,7 @@
                 "x-mapped-to": "JobOwnerAlternatePhone",
                 "nullable": true
               },
-              "membershipNo": {
+              "membershipNumber": {
                 "type": "string",
                 "x-mapped-to": "JobOwnerMembershipNo",
                 "nullable": true
@@ -352,7 +352,7 @@
             "nullable": true
           },
           "rmsJobType": {
-            "$ref": "#/components/schemas/RMSJobTypeValues",
+            "$ref": "#/components/schemas/JobRMSTypeValues",
             "nullable": true
           },
           "vehicle": {
@@ -365,7 +365,7 @@
                 "nullable": true
               },
               "type": {
-                "$ref": "#/components/schemas/VehicleTypeValues",
+                "$ref": "#/components/schemas/JobVehicleTypeValues",
                 "nullable": true
               },
               "colour": {
@@ -386,7 +386,7 @@
                 "nullable": true
               },
               "fuelType": {
-                "$ref": "#/components/schemas/VehicleFuelTypeValues",
+                "$ref": "#/components/schemas/JobVehicleFuelTypeValues",
                 "nullable": true
               },
               "grossWeight": {
@@ -447,7 +447,7 @@
                 "nullable": true
               },
               "transmissionType": {
-                "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
+                "$ref": "#/components/schemas/JobVehicleTransmissionTypeValues",
                 "nullable": true
               },
               "vin": {
@@ -471,7 +471,7 @@
             "nullable": true
           },
           "userUpdates": {
-            "$ref": "#/components/schemas/UserJobUpdates",
+            "$ref": "#/components/schemas/JobUserUpdates",
             "nullable": true
           }
         },
@@ -488,7 +488,7 @@
           "rmsSchemaVersion"
         ]
       },
-      "EventTypeValues": {
+      "JobEventTypeValues": {
         "type": "string",
         "enum": [
           "newJob",
@@ -497,14 +497,14 @@
           "acceptedJob"
         ]
       },
-      "RMSJobTypeValues": {
+      "JobRMSTypeValues": {
         "type": "string",
         "enum": [
           "recovery",
           "redelivery"
         ]
       },
-      "VehicleFuelTypeValues": {
+      "JobVehicleFuelTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleFuelType",
         "enum": [
@@ -517,7 +517,7 @@
           "other"
         ]
       },
-      "VehicleTransmissionTypeValues": {
+      "JobVehicleTransmissionTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
@@ -528,7 +528,7 @@
           "unknown"
         ]
       },
-      "VehicleTypeValues": {
+      "JobVehicleTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleClass",
         "enum": [
@@ -561,7 +561,7 @@
             "nullable": true
           },
           "jobs": {
-            "$ref": "#/components/schemas/UserJobUpdates",
+            "$ref": "#/components/schemas/JobUserUpdates",
             "nullable": true
           },
           "activities": {
@@ -594,7 +594,7 @@
           }
         }
       },
-      "UserJobUpdates": {
+      "JobUserUpdates": {
         "type": "object",
         "properties": {
           "docId": {
@@ -611,24 +611,24 @@
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/StatusValues",
+            "$ref": "#/components/schemas/JobStatusValues",
             "nullable": true
           },
           "statusHistory": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Status",
+              "$ref": "#/components/schemas/JobStatus",
               "nullable": false
             },
             "nullable": true
           }
         }
       },
-      "Status": {
+      "JobStatus": {
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/StatusValues"
+            "$ref": "#/components/schemas/JobStatusValues"
           },
           "timestamp": {
             "type": "string",
@@ -640,7 +640,7 @@
           "timestamp"
         ]
       },
-      "StatusValues": {
+      "JobStatusValues": {
         "type": "string",
         "enum": [
           "none",
