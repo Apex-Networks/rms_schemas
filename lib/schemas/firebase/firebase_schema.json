@@ -688,7 +688,7 @@
           "id"
         ]
       },
-      "Joblocation": {
+      "JobLocation": {
         "type": "object",
         "properties": {
           "code": {
