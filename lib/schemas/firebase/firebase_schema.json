@@ -159,75 +159,15 @@
             "nullable": false
           },
           "owner": {
-            "type": "object",
-            "properties": {
-              "address": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerAddress",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "alternatePhone": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerAlternatePhone",
-                "nullable": true
-              },
-              "membershipNumber": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerMembershipNo",
-                "nullable": true
-              },
-              "name": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerName",
-                "nullable": true
-              },
-              "phone": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerPhone",
-                "nullable": true
-              },
-              "postcode": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerPostcode",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobOwner",
             "nullable": true
           },
           "passengers": {
-            "type": "object",
-            "properties": {
-              "adult": {
-                "type": "integer",
-                "x-mapped-to": "JobPassengerAdult",
-                "nullable": true
-              },
-              "child": {
-                "type": "integer",
-                "x-mapped-to": "JobPassengerChild",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobPassengers",
             "nullable": true
           },
           "priority": {
-            "type": "object",
-            "properties": {
-              "detail": {
-                "type": "string",
-                "x-mapped-to": "JobPriorityDetail",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "reason": {
-                "type": "integer",
-                "x-mapped-to": "JobPriorityReason",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobPriority",
             "nullable": true
           },
           "requiredTowType": {
@@ -705,6 +645,75 @@
             "type": "object",
             "x-mapped-to": "NEW",
             "x-firestore-type": "geopoint",
+            "nullable": true
+          }
+        }
+      },
+      "JobOwner": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerAddress",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "alternatePhone": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerAlternatePhone",
+            "nullable": true
+          },
+          "membershipNumber": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerMembershipNo",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerName",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerPhone",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerPostcode",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
+      },
+      "JobPassengers": {
+        "type": "object",
+        "properties": {
+          "adult": {
+            "type": "integer",
+            "x-mapped-to": "JobPassengerAdult",
+            "nullable": true
+          },
+          "child": {
+            "type": "integer",
+            "x-mapped-to": "JobPassengerChild",
+            "nullable": true
+          }
+        }
+      },
+      "JobPriority": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "x-mapped-to": "JobPriorityDetail",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "reason": {
+            "type": "integer",
+            "x-mapped-to": "JobPriorityReason",
+            "x-used-in-legacy-notes-section": true,
             "nullable": true
           }
         }
