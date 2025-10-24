@@ -307,48 +307,7 @@
             "nullable": true
           },
           "towedItem": {
-            "type": "object",
-            "properties": {
-              "axleType": {
-                "type": "string",
-                "x-mapped-to": "JobTowedItemAxleType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobTowedItemDesc",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "height": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemHeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "length": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemLength",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "weight": {
-                "type": "integer",
-                "x-mapped-to": "JobTowedItemWeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "width": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemWidth",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobTowedItem",
             "nullable": true
           },
           "rmsJobType": {
@@ -696,6 +655,51 @@
         "required": [
           "eta"
         ]
+      },
+      "JobTowedItem": {
+        "type": "object",
+        "properties": {
+          "axleType": {
+            "type": "string",
+            "x-mapped-to": "JobTowedItemAxleType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobTowedItemDesc",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemHeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemLength",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "x-mapped-to": "JobTowedItemWeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemWidth",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        },
+        "nullable": true
       }
     }
   }
