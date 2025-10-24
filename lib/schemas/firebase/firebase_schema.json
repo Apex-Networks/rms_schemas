@@ -1,13 +1,67 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Job",
-    "version": "2.0.0",
-    "description": "Use this schema when sending data from the backend to Firebase to be consumed by the app"
+    "title": "Firebase Schema",
+    "version": "2.1.0",
+    "description": "Consolidated schema for all Firebase data structures"
   },
   "paths": {},
   "components": {
     "schemas": {
+      "Deltas": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": true,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
+          },
+          "driverUid": {
+            "type": "string",
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
+            "nullable": true
+          },
+          "jobs": {
+            "$ref": "#/components/schemas/JobUserUpdates",
+            "nullable": true
+          },
+          "activities": {
+            "type": "object",
+            "properties": {}
+          },
+          "vehicleCheck": {
+            "type": "object",
+            "properties": {}
+          },
+          "fuelEntry": {
+            "type": "object",
+            "properties": {}
+          },
+          "clockInOut": {
+            "type": "object",
+            "properties": {}
+          },
+          "messages": {
+            "type": "object",
+            "properties": {}
+          },
+          "forms": {
+            "type": "object",
+            "properties": {}
+          },
+          "redFlashingLight": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
       "Job": {
         "type": "object",
         "properties": {
@@ -89,25 +143,7 @@
             "nullable": false
           },
           "destination": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobDestinationCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobDestination",
-                "nullable": true
-              },
-              "gps": {
-                "type": "object",
-                "x-mapped-to": "NEW",
-                "x-firestore-type": "geopoint",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobDestination",
             "nullable": true
           },
           "docId": {
@@ -131,7 +167,7 @@
             "nullable": true
           },
           "eventType": {
-            "$ref": "#/components/schemas/EventTypeValues",
+            "$ref": "#/components/schemas/JobEventTypeValues",
             "nullable": true
           },
           "hasSpecialNeeds": {
@@ -162,25 +198,7 @@
             "nullable": false
           },
           "location": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobLocationCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobLocationDescription",
-                "nullable": true
-              },
-              "gps": {
-                "type": "object",
-                "x-mapped-to": "NEW",
-                "x-firestore-type": "geopoint",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobLocation",
             "nullable": true
           },
           "locationOfKeys": {
@@ -195,75 +213,15 @@
             "nullable": false
           },
           "owner": {
-            "type": "object",
-            "properties": {
-              "address": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerAddress",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "alternatePhone": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerAlternatePhone",
-                "nullable": true
-              },
-              "membershipNo": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerMembershipNo",
-                "nullable": true
-              },
-              "name": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerName",
-                "nullable": true
-              },
-              "phone": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerPhone",
-                "nullable": true
-              },
-              "postcode": {
-                "type": "string",
-                "x-mapped-to": "JobOwnerPostcode",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobOwner",
             "nullable": true
           },
           "passengers": {
-            "type": "object",
-            "properties": {
-              "adult": {
-                "type": "integer",
-                "x-mapped-to": "JobPassengerAdult",
-                "nullable": true
-              },
-              "child": {
-                "type": "integer",
-                "x-mapped-to": "JobPassengerChild",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobPassengers",
             "nullable": true
           },
           "priority": {
-            "type": "object",
-            "properties": {
-              "detail": {
-                "type": "string",
-                "x-mapped-to": "JobPriorityDetail",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "reason": {
-                "type": "integer",
-                "x-mapped-to": "JobPriorityReason",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobPriority",
             "nullable": true
           },
           "requiredTowType": {
@@ -277,192 +235,24 @@
             "x-mapped-to": "JobRingOnApproachMinutes",
             "nullable": true
           },
-          "service": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "nullable": false
-              }
-            },
-            "required": [
-              "id"
-            ],
+         "service": {
+            "$ref": "#/components/schemas/JobService",
             "nullable": false
           },
           "symptom": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string",
-                "x-mapped-to": "JobSymptomCode",
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobSymptomDescription",
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobSymptom",
             "nullable": true
           },
           "towedItem": {
-            "type": "object",
-            "properties": {
-              "axleType": {
-                "type": "string",
-                "x-mapped-to": "JobTowedItemAxleType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "description": {
-                "type": "string",
-                "x-mapped-to": "JobTowedItemDesc",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "height": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemHeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "length": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemLength",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "weight": {
-                "type": "integer",
-                "x-mapped-to": "JobTowedItemWeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "width": {
-                "type": "number",
-                "format": "double",
-                "x-mapped-to": "JobTowedItemWidth",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobTowedItem",
             "nullable": true
           },
           "rmsJobType": {
-            "$ref": "#/components/schemas/RMSJobTypeValues",
+            "$ref": "#/components/schemas/JobRMSTypeValues",
             "nullable": true
           },
           "vehicle": {
-            "type": "object",
-            "properties": {
-              "axleType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleAxleType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "type": {
-                "$ref": "#/components/schemas/VehicleTypeValues",
-                "nullable": true
-              },
-              "colour": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleColour",
-                "nullable": true
-              },
-              "contents": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleContents",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "engineDetails": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleEngineDetails",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "fuelType": {
-                "$ref": "#/components/schemas/VehicleFuelTypeValues",
-                "nullable": true
-              },
-              "grossWeight": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleGrossWeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "hasTrailer": {
-                "type": "boolean",
-                "x-mapped-to": "JobVehicleHasTrailer",
-                "nullable": true
-              },
-              "height": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleHeight",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "length": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleLength",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "make": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleMake",
-                "nullable": true
-              },
-              "model": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleModel",
-                "nullable": true
-              },
-              "numberOfDoors": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleNoOfDoors",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "odometer": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleOdometer",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "registration": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleRegistration",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "trailerType": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleTrailerType",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "transmissionType": {
-                "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
-                "nullable": true
-              },
-              "vin": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleVIN",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              },
-              "width": {
-                "type": "string",
-                "x-mapped-to": "JobVehicleWidth",
-                "x-used-in-legacy-notes-section": true,
-                "nullable": true
-              }
-            },
+            "$ref": "#/components/schemas/JobVehicle",
             "nullable": true
           },
           "vvrfAccountId": {
@@ -471,7 +261,7 @@
             "nullable": true
           },
           "userUpdates": {
-            "$ref": "#/components/schemas/UserJobUpdates",
+            "$ref": "#/components/schemas/JobUserUpdates",
             "nullable": true
           }
         },
@@ -488,7 +278,7 @@
           "rmsSchemaVersion"
         ]
       },
-      "EventTypeValues": {
+      "JobEventTypeValues": {
         "type": "string",
         "enum": [
           "newJob",
@@ -497,14 +287,14 @@
           "acceptedJob"
         ]
       },
-      "RMSJobTypeValues": {
+      "JobRMSTypeValues": {
         "type": "string",
         "enum": [
           "recovery",
           "redelivery"
         ]
       },
-      "VehicleFuelTypeValues": {
+      "JobVehicleFuelTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleFuelType",
         "enum": [
@@ -517,7 +307,7 @@
           "other"
         ]
       },
-      "VehicleTransmissionTypeValues": {
+      "JobVehicleTransmissionTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
@@ -528,7 +318,7 @@
           "unknown"
         ]
       },
-      "VehicleTypeValues": {
+      "JobVehicleTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleClass",
         "enum": [
@@ -540,61 +330,7 @@
           "van"
         ]
       },
-      "Deltas": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "rmsSchemaVersion": {
-            "type": "string",
-            "nullable": true,
-            "description": "The schema version of this repository",
-            "example": "1.1.0"
-          },
-          "driverUid": {
-            "type": "string",
-            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
-            "example": "000001-3",
-            "nullable": true
-          },
-          "jobs": {
-            "$ref": "#/components/schemas/UserJobUpdates",
-            "nullable": true
-          },
-          "activities": {
-            "type": "object",
-            "properties": {}
-          },
-          "vehicleCheck": {
-            "type": "object",
-            "properties": {}
-          },
-          "fuelEntry": {
-            "type": "object",
-            "properties": {}
-          },
-          "clockInOut": {
-            "type": "object",
-            "properties": {}
-          },
-          "messages": {
-            "type": "object",
-            "properties": {}
-          },
-          "forms": {
-            "type": "object",
-            "properties": {}
-          },
-          "redFlashingLight": {
-            "type": "object",
-            "properties": {}
-          }
-        }
-      },
-      "UserJobUpdates": {
+      "JobUserUpdates": {
         "type": "object",
         "properties": {
           "docId": {
@@ -611,24 +347,24 @@
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/StatusValues",
+            "$ref": "#/components/schemas/JobStatusValues",
             "nullable": true
           },
           "statusHistory": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Status",
+              "$ref": "#/components/schemas/JobStatus",
               "nullable": false
             },
             "nullable": true
           }
         }
       },
-      "Status": {
+      "JobStatus": {
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/StatusValues"
+            "$ref": "#/components/schemas/JobStatusValues"
           },
           "timestamp": {
             "type": "string",
@@ -640,7 +376,7 @@
           "timestamp"
         ]
       },
-      "StatusValues": {
+      "JobStatusValues": {
         "type": "string",
         "enum": [
           "none",
@@ -696,6 +432,297 @@
         "required": [
           "eta"
         ]
+      },
+      "JobTowedItem": {
+        "type": "object",
+        "properties": {
+          "axleType": {
+            "type": "string",
+            "x-mapped-to": "JobTowedItemAxleType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobTowedItemDesc",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemHeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemLength",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "x-mapped-to": "JobTowedItemWeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "x-mapped-to": "JobTowedItemWidth",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
+      },
+      "JobDestination": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobDestinationCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobDestination",
+            "nullable": true
+          },
+          "gps": {
+            "type": "object",
+            "x-mapped-to": "NEW",
+            "x-firestore-type": "geopoint",
+            "nullable": true
+          }
+        }
+      },
+      "JobService": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "nullable": false
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "JobLocation": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobLocationCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobLocationDescription",
+            "nullable": true
+          },
+          "gps": {
+            "type": "object",
+            "x-mapped-to": "NEW",
+            "x-firestore-type": "geopoint",
+            "nullable": true
+          }
+        }
+      },
+      "JobOwner": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerAddress",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "alternatePhone": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerAlternatePhone",
+            "nullable": true
+          },
+          "membershipNumber": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerMembershipNo",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerName",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerPhone",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "x-mapped-to": "JobOwnerPostcode",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
+      },
+      "JobPassengers": {
+        "type": "object",
+        "properties": {
+          "adult": {
+            "type": "integer",
+            "x-mapped-to": "JobPassengerAdult",
+            "nullable": true
+          },
+          "child": {
+            "type": "integer",
+            "x-mapped-to": "JobPassengerChild",
+            "nullable": true
+          }
+        }
+      },
+      "JobPriority": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "x-mapped-to": "JobPriorityDetail",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "reason": {
+            "type": "integer",
+            "x-mapped-to": "JobPriorityReason",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
+      },
+      "JobSymptom": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-mapped-to": "JobSymptomCode",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "x-mapped-to": "JobSymptomDescription",
+            "nullable": true
+          }
+        }
+      },
+      "JobVehicle": {
+        "type": "object",
+        "properties": {
+          "axleType": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleAxleType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/JobVehicleTypeValues",
+            "nullable": true
+          },
+          "colour": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleColour",
+            "nullable": true
+          },
+          "contents": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleContents",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "engineDetails": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleEngineDetails",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "fuelType": {
+            "$ref": "#/components/schemas/JobVehicleFuelTypeValues",
+            "nullable": true
+          },
+          "grossWeight": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleGrossWeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "hasTrailer": {
+            "type": "boolean",
+            "x-mapped-to": "JobVehicleHasTrailer",
+            "nullable": true
+          },
+          "height": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleHeight",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "length": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleLength",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "make": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleMake",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleModel",
+            "nullable": true
+          },
+          "numberOfDoors": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleNoOfDoors",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "odometer": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleOdometer",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "registration": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleRegistration",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "trailerType": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleTrailerType",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "transmissionType": {
+            "$ref": "#/components/schemas/JobVehicleTransmissionTypeValues",
+            "nullable": true
+          },
+          "vin": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleVIN",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          },
+          "width": {
+            "type": "string",
+            "x-mapped-to": "JobVehicleWidth",
+            "x-used-in-legacy-notes-section": true,
+            "nullable": true
+          }
+        }
       }
     }
   }
