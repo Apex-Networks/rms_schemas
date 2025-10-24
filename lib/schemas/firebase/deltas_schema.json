@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Job",
+    "version": "2.0.0",
+    "description": "Use this schema when sending data from the backend to Firebase to be consumed by the app"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Deltas": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": true,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
+          },
+          "driverUid": {
+            "type": "string",
+            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
+            "example": "000001-3",
+            "nullable": true
+          },
+          "jobs": {
+            "$ref": "./firebase_schema.json#/components/schemas/JobUserUpdates",
+            "nullable": true
+          },
+          "activities": {
+            "type": "object",
+            "properties": {}
+          },
+          "vehicleCheck": {
+            "type": "object",
+            "properties": {}
+          },
+          "fuelEntry": {
+            "type": "object",
+            "properties": {}
+          },
+          "clockInOut": {
+            "type": "object",
+            "properties": {}
+          },
+          "messages": {
+            "type": "object",
+            "properties": {}
+          },
+          "forms": {
+            "type": "object",
+            "properties": {}
+          },
+          "redFlashingLight": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      }
+    }
+  }
+}

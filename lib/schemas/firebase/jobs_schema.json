@@ -276,60 +276,6 @@
           "van"
         ]
       },
-      "Deltas": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "rmsSchemaVersion": {
-            "type": "string",
-            "nullable": true,
-            "description": "The schema version of this repository",
-            "example": "1.1.0"
-          },
-          "driverUid": {
-            "type": "string",
-            "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
-            "example": "000001-3",
-            "nullable": true
-          },
-          "jobs": {
-            "$ref": "#/components/schemas/JobUserUpdates",
-            "nullable": true
-          },
-          "activities": {
-            "type": "object",
-            "properties": {}
-          },
-          "vehicleCheck": {
-            "type": "object",
-            "properties": {}
-          },
-          "fuelEntry": {
-            "type": "object",
-            "properties": {}
-          },
-          "clockInOut": {
-            "type": "object",
-            "properties": {}
-          },
-          "messages": {
-            "type": "object",
-            "properties": {}
-          },
-          "forms": {
-            "type": "object",
-            "properties": {}
-          },
-          "redFlashingLight": {
-            "type": "object",
-            "properties": {}
-          }
-        }
-      },
       "JobUserUpdates": {
         "type": "object",
         "properties": {
