@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Schema",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "Consolidated schema for all Firebase data structures"
   },
   "paths": {},
@@ -28,35 +28,35 @@
             "example": "000001-3",
             "nullable": true
           },
-          "jobs": {
+          "jobsFeature": {
             "$ref": "#/components/schemas/JobUserUpdates",
             "nullable": true
           },
-          "activities": {
+          "activitiesFeature": {
             "type": "object",
             "properties": {}
           },
-          "vehicleCheck": {
+          "vehicleCheckFeature": {
             "type": "object",
             "properties": {}
           },
-          "fuelEntry": {
+          "fuelEntryFeature": {
             "type": "object",
             "properties": {}
           },
-          "clockInOut": {
+          "clockInOutFeature": {
             "type": "object",
             "properties": {}
           },
-          "messages": {
+          "messagesFeature": {
             "type": "object",
             "properties": {}
           },
-          "forms": {
+          "formsFeature": {
             "type": "object",
             "properties": {}
           },
-          "redFlashingLight": {
+          "redFlashingLightFeature": {
             "type": "object",
             "properties": {}
           }
@@ -164,6 +164,7 @@
             "format": "date-time",
             "x-firestore-type": "timestamp",
             "x-mapped-to": "NEW",
+            "description": "Expected time of arrival as set by the driver when accepting the job",
             "nullable": true
           },
           "eventType": {
@@ -422,7 +423,8 @@
           "eta": {
             "type": "string",
             "format": "date-time",
-            "x-firestore-type": "timestamp"
+            "x-firestore-type": "timestamp",
+            "description": "Expected time of arrival as set by the driver when accepting the job"
           },
           "note": {
             "type": "string",
@@ -570,15 +572,18 @@
       },
       "JobPassengers": {
         "type": "object",
+        "description": "The number of passengers in the vehicle",
         "properties": {
           "adult": {
             "type": "integer",
             "x-mapped-to": "JobPassengerAdult",
+            "description": "Adult count",
             "nullable": true
           },
           "child": {
             "type": "integer",
             "x-mapped-to": "JobPassengerChild",
+            "description": "Child count",
             "nullable": true
           }
         }
