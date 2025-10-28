@@ -14,7 +14,7 @@ Quick Links:
 
 ## Overview
 
-This package provides JSON schema definitions for job DTOs and related data structures used in the RMS system. It's designed to be used as a dependency in Flutter and Dart applications that need to validate or work with RMS data structures.
+This repository provides OpenAPI schema definitions for RMS (Recovery Management System) data structures. These schemas define the structure, validation rules, and data types for all RMS system components, ensuring consistent data contracts across mobile apps, backend services, and integrations.
 
 ## Schemas Included
 
