@@ -2,15 +2,25 @@
 
 A Dart package containing OpenAPI schema definitions for RMS (Recovery Management System) data structures.
 
+## 📖 Interactive Documentation
+
+Quick Links:
+
+- **[Firebase Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_schema.json)** - Job management and Firebase data structures
+- **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)** - User authentication structures
+- **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)** - JWT token claims
+
+> 💡 Click any link above for clean, interactive schema visualization!
+
 ## Overview
 
-This package provides JSON schema definitions for job DTOs and related data structures used in the RMS system. It's designed to be used as a dependency in Flutter and Dart applications that need to validate or work with RMS data structures.
+This repository provides OpenAPI schema definitions for RMS (Recovery Management System) data structures. These schemas define the structure, validation rules, and data types for all RMS system components, ensuring consistent data contracts across mobile apps, backend services, and integrations.
 
 ## Schemas Included
 
 ### Firebase Schemas
 
-- **Firebase Schema** (`lib/schemas/job/firebase_schema.json`) - OpenAPI 3.0.3 schema for Firebase Firestore data transfer objects
+- **Firebase Schema** (`lib/schemas/firebase/firebase_schema.json`) - OpenAPI 3.0.3 schema for Firebase Firestore data transfer objects
 
 ### Authentication Schemas
 
