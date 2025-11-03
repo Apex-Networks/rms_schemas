@@ -348,10 +348,6 @@
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/JobStatusValues",
-            "nullable": true
-          },
-          "status2": {
             "$ref": "#/components/schemas/JobStatus",
             "nullable": true
           },
