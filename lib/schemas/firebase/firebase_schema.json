@@ -384,7 +384,7 @@
           "accepted",
           "onRoute",
           "atScene",
-          "clear",
+          "clearScene",
           "complete",
           "cancelled"
         ]
