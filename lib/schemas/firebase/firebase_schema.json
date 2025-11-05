@@ -167,8 +167,8 @@
             "description": "Expected time of arrival as set by the driver when accepting the job",
             "nullable": true
           },
-          "eventType": {
-            "$ref": "#/components/schemas/JobEventTypeValues",
+          "incomingEventType": {
+            "$ref": "#/components/schemas/JobIncomingEventTypeValues",
             "nullable": true
           },
           "hasSpecialNeeds": {
@@ -279,13 +279,12 @@
           "rmsSchemaVersion"
         ]
       },
-      "JobEventTypeValues": {
+      "JobIncomingEventTypeValues": {
         "type": "string",
         "enum": [
           "newJob",
           "updatedJob",
-          "cancelledJob",
-          "acceptedJob"
+          "cancelledJob"
         ]
       },
       "JobRMSTypeValues": {
