@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Schema",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "description": "Consolidated schema for all Firebase data structures"
   },
   "paths": {},
@@ -167,8 +167,8 @@
             "description": "Expected time of arrival as set by the driver when accepting the job",
             "nullable": true
           },
-          "eventType": {
-            "$ref": "#/components/schemas/JobEventTypeValues",
+          "incomingEventType": {
+            "$ref": "#/components/schemas/JobIncomingEventTypeValues",
             "nullable": true
           },
           "hasSpecialNeeds": {
@@ -279,13 +279,12 @@
           "rmsSchemaVersion"
         ]
       },
-      "JobEventTypeValues": {
+      "JobIncomingEventTypeValues": {
         "type": "string",
         "enum": [
           "newJob",
           "updatedJob",
-          "cancelledJob",
-          "acceptedJob"
+          "cancelledJob"
         ]
       },
       "JobRMSTypeValues": {
@@ -348,7 +347,7 @@
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/JobStatusValues",
+            "$ref": "#/components/schemas/JobStatus",
             "nullable": true
           },
           "statusHistory": {
@@ -385,7 +384,7 @@
           "accepted",
           "onRoute",
           "atScene",
-          "clear",
+          "clearScene",
           "complete",
           "cancelled"
         ]
