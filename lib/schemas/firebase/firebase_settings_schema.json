@@ -19,10 +19,14 @@
           },
           "daysToKeepPhotos": {
             "type": "integer",
-            "nullable": true
+            "nullable": false
           },
           "enableGps": {
             "type": "boolean",
+            "nullable": false
+          },
+          "pin": {
+            "type": "string",
             "nullable": false
           },
           "enableFuelEntries": {
@@ -31,8 +35,10 @@
           }
         },
         "required": [
+          "daysToKeepPhotos",
           "enableGps",
-          "enableFuelEntries"
+          "enableFuelEntries",
+          "pin"
         ]
       },
       "FuelEntryValues": {
