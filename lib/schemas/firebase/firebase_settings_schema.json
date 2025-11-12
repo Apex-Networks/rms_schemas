@@ -25,6 +25,10 @@
             "type": "boolean",
             "nullable": false
           },
+          "uploadMediaWifiOnly": {
+            "type": "boolean",
+            "nullable": false
+          },
           "pin": {
             "type": "string",
             "nullable": false
@@ -36,9 +40,10 @@
         },
         "required": [
           "daysToKeepPhotos",
-          "enableGps",
           "enableFuelEntries",
-          "pin"
+          "enableGps",
+          "pin",
+          "uploadMediaWifiOnly"
         ]
       },
       "FuelEntryValues": {
