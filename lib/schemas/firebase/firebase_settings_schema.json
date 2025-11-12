@@ -21,6 +21,10 @@
             "type": "integer",
             "nullable": false
           },
+          "daysToKeepCompletedRecords": {
+            "type": "integer",
+            "nullable": false
+          },
           "enableGps": {
             "type": "boolean",
             "nullable": false
@@ -40,6 +44,7 @@
         },
         "required": [
           "daysToKeepPhotos",
+          "daysToKeepCompletedRecords",
           "enableFuelEntries",
           "enableGps",
           "pin",
