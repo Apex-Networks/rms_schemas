@@ -11,47 +11,45 @@
       "Settings": {
         "type": "object",
         "properties": {
-          "hideCallerIdPrefix": {
+          "pin": {
             "type": "string",
-            "nullable": true,
-            "description": "Add a description if required",
-            "example": "Add an example if required"
+            "nullable": false
           },
-          "daysToKeepPhotos": {
+          "maskCallerIdPrefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "mediaExpiryDays": {
             "type": "integer",
             "nullable": false
           },
-          "daysToKeepCompletedRecords": {
+          "completedRecordsExpiryDays": {
             "type": "integer",
+            "nullable": false
+          },
+          "mediaUploadWifiOnly": {
+            "type": "boolean",
             "nullable": false
           },
           "enableGps": {
             "type": "boolean",
             "nullable": false
           },
-          "uploadMediaWifiOnly": {
-            "type": "boolean",
-            "nullable": false
-          },
-          "pin": {
-            "type": "string",
-            "nullable": false
-          },
-          "enableFuelEntries": {
-            "$ref": "#/components/schemas/FuelEntryValues",
+          "fuelEntryMode": {
+            "$ref": "#/components/schemas/FuelEntryMode",
             "nullable": false
           }
         },
         "required": [
-          "daysToKeepPhotos",
-          "daysToKeepCompletedRecords",
-          "enableFuelEntries",
-          "enableGps",
           "pin",
-          "uploadMediaWifiOnly"
+          "mediaExpiryDays",
+          "completedRecordsExpiryDays",
+          "mediaUploadWifiOnly",
+          "enableGps",
+          "fuelEntryMode"
         ]
       },
-      "FuelEntryValues": {
+      "FuelEntryMode": {
         "type": "string",
         "enum": [
           "disabled",
