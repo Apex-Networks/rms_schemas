@@ -27,6 +27,34 @@
             "type": "integer",
             "nullable": false
           },
+          "notifyOnRedeployedJobs": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireInventoryCheck": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "inventoryCheckExpiryDays": {
+            "type": "integer",
+            "nullable": false
+          },
+          "requireJobRiskAssessment": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "restrictDriverTimeChanges": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireMileageAndOutcome": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireConditionReports": {
+            "type": "boolean",
+            "nullable": false
+          },
           "mediaUploadWifiOnly": {
             "type": "boolean",
             "nullable": false
@@ -35,8 +63,16 @@
             "type": "boolean",
             "nullable": false
           },
+          "useDeviceTimeForLocation": {
+            "type": "boolean",
+            "nullable": false
+          },
           "fuelEntryMode": {
             "$ref": "#/components/schemas/FuelEntryMode",
+            "nullable": false
+          },
+          "dailyVehicleCheckMode": {
+            "$ref": "#/components/schemas/DailyVehicleCheckMode",
             "nullable": false
           }
         },
@@ -44,9 +80,18 @@
           "pin",
           "mediaExpiryDays",
           "completedRecordsExpiryDays",
+          "notifyOnRedeployedJobs",
+          "requireInventoryCheck",
+          "inventoryCheckExpiryDays",
+          "requireJobRiskAssessment",
+          "restrictDriverTimeChanges",
+          "requireMileageAndOutcome",
+          "requireConditionReports",
           "mediaUploadWifiOnly",
           "enableGps",
-          "fuelEntryMode"
+          "useDeviceTimeForLocation",
+          "fuelEntryMode",
+          "dailyVehicleCheckMode"
         ]
       },
       "FuelEntryMode": {
@@ -55,6 +100,15 @@
           "disabled",
           "enabled",
           "enabledForceImage"
+        ]
+      },
+      "DailyVehicleCheckMode": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "enabled",
+          "remind",
+          "mandatory"
         ]
       }
     }
