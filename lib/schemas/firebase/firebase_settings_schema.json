@@ -13,7 +13,8 @@
         "properties": {
           "pin": {
             "type": "string",
-            "nullable": false
+            "nullable": false,
+            "description": "Driver's PIN for settings access"
           },
           "maskCallerIdPrefix": {
             "type": "string",
