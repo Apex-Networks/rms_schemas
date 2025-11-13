@@ -21,7 +21,8 @@
           },
           "mediaExpiryDays": {
             "type": "integer",
-            "nullable": false
+            "nullable": true,
+            "description": "This is a local setting"
           },
           "completedRecordsExpiryDays": {
             "type": "integer",
@@ -78,7 +79,6 @@
         },
         "required": [
           "pin",
-          "mediaExpiryDays",
           "completedRecordsExpiryDays",
           "notifyOnRedeployedJobs",
           "requireInventoryCheck",
