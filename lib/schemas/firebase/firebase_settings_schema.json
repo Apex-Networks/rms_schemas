@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Settings Schema",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Firebase Firestore schema for RMS driver app settings and data."
   },
   "paths": {},
@@ -11,10 +11,9 @@
       "Settings": {
         "type": "object",
         "properties": {
-          "pin": {
+          "driverPin": {
             "type": "string",
-            "nullable": false,
-            "description": "Driver's PIN for settings access"
+            "nullable": false
           },
           "maskCallerIdPrefix": {
             "type": "string",
@@ -29,11 +28,11 @@
             "type": "integer",
             "nullable": false
           },
-          "notifyOnRedeployedJobs": {
+          "redeployedJobsNotified": {
             "type": "boolean",
             "nullable": false
           },
-          "requireInventoryCheck": {
+          "inventoryCheckRequired": {
             "type": "boolean",
             "nullable": false
           },
@@ -41,19 +40,19 @@
             "type": "integer",
             "nullable": false
           },
-          "requireJobRiskAssessment": {
+          "jobRiskAssessmentRequired": {
             "type": "boolean",
             "nullable": false
           },
-          "restrictDriverTimeChanges": {
+          "driverTimeChangesRestricted": {
             "type": "boolean",
             "nullable": false
           },
-          "requireMileageAndOutcome": {
+          "mileageAndOutcomeRequired": {
             "type": "boolean",
             "nullable": false
           },
-          "requireConditionReports": {
+          "conditionReportsRequired": {
             "type": "boolean",
             "nullable": false
           },
@@ -61,7 +60,7 @@
             "type": "boolean",
             "nullable": false
           },
-          "enableGps": {
+          "gpsEnabled": {
             "type": "boolean",
             "nullable": false
           },
@@ -79,17 +78,17 @@
           }
         },
         "required": [
-          "pin",
+          "driverPin",
           "completedRecordsExpiryDays",
-          "notifyOnRedeployedJobs",
-          "requireInventoryCheck",
+          "redeployedJobsNotified",
+          "inventoryCheckRequired",
           "inventoryCheckExpiryDays",
-          "requireJobRiskAssessment",
-          "restrictDriverTimeChanges",
-          "requireMileageAndOutcome",
-          "requireConditionReports",
+          "jobRiskAssessmentRequired",
+          "driverTimeChangesRestricted",
+          "mileageAndOutcomeRequired",
+          "conditionReportsRequired",
           "mediaUploadWifiOnly",
-          "enableGps",
+          "gpsEnabled",
           "useDeviceTimeForLocation",
           "fuelEntryMode",
           "dailyVehicleCheckMode"
