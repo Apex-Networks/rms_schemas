@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Firebase Settings Schema",
+    "version": "0.0.1",
+    "description": "Firebase Firestore schema for RMS driver app settings and data."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Settings": {
+        "type": "object",
+        "properties": {
+          "pin": {
+            "type": "string",
+            "nullable": false,
+            "description": "Driver's PIN for settings access"
+          },
+          "maskCallerIdPrefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "mediaExpiryDays": {
+            "type": "integer",
+            "nullable": true,
+            "description": "This is a local setting"
+          },
+          "completedRecordsExpiryDays": {
+            "type": "integer",
+            "nullable": false
+          },
+          "notifyOnRedeployedJobs": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireInventoryCheck": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "inventoryCheckExpiryDays": {
+            "type": "integer",
+            "nullable": false
+          },
+          "requireJobRiskAssessment": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "restrictDriverTimeChanges": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireMileageAndOutcome": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "requireConditionReports": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "mediaUploadWifiOnly": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "enableGps": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "useDeviceTimeForLocation": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "fuelEntryMode": {
+            "$ref": "#/components/schemas/FuelEntryMode",
+            "nullable": false
+          },
+          "dailyVehicleCheckMode": {
+            "$ref": "#/components/schemas/DailyVehicleCheckMode",
+            "nullable": false
+          }
+        },
+        "required": [
+          "pin",
+          "completedRecordsExpiryDays",
+          "notifyOnRedeployedJobs",
+          "requireInventoryCheck",
+          "inventoryCheckExpiryDays",
+          "requireJobRiskAssessment",
+          "restrictDriverTimeChanges",
+          "requireMileageAndOutcome",
+          "requireConditionReports",
+          "mediaUploadWifiOnly",
+          "enableGps",
+          "useDeviceTimeForLocation",
+          "fuelEntryMode",
+          "dailyVehicleCheckMode"
+        ]
+      },
+      "FuelEntryMode": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "enabled",
+          "enabledForceImage"
+        ]
+      },
+      "DailyVehicleCheckMode": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "enabled",
+          "remind",
+          "mandatory"
+        ]
+      }
+    }
+  }
+}
