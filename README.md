@@ -6,8 +6,8 @@ A Dart package containing OpenAPI schema definitions for RMS (Recovery Managemen
 
 Quick Links:
 
-- **[Firebase Jobs Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_schema.json)** - Job management and Firebase data structures
-- **[Firebase Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_settings_schema.json)** - Job management and Firebase data structures
+- **[Firebase Jobs Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_schema.json)** - Job and Deltas data structures
+- **[Firebase Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_settings_schema.json)** - Settings data structure
 - **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)** - User authentication structures
 - **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)** - JWT token claims
 
