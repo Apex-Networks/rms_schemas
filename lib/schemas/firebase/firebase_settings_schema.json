@@ -11,10 +11,9 @@
       "Settings": {
         "type": "object",
         "properties": {
-          "pin": {
+          "driverPin": {
             "type": "string",
-            "nullable": false,
-            "description": "Driver's PIN for settings access"
+            "nullable": false
           },
           "maskCallerIdPrefix": {
             "type": "string",
@@ -79,7 +78,7 @@
           }
         },
         "required": [
-          "pin",
+          "driverPin",
           "completedRecordsExpiryDays",
           "notifyOnRedeployedJobs",
           "requireInventoryCheck",
