@@ -38,12 +38,8 @@
             "type": "boolean",
             "nullable": false
           },
-          "inventoryCheckRequired": {
-            "type": "boolean",
-            "nullable": false
-          },
-          "inventoryCheckExpiryDays": {
-            "type": "integer",
+          "inventoryCheck": {
+            "$ref": "#/components/schemas/InventoryCheck",
             "nullable": false
           },
           "jobRiskAssessmentRequired": {
@@ -88,8 +84,7 @@
           "driverPin",
           "completedRecordsExpiryDays",
           "redeployedJobsNotified",
-          "inventoryCheckRequired",
-          "inventoryCheckExpiryDays",
+          "inventoryCheck",
           "jobRiskAssessmentRequired",
           "driverTimeChangesRestricted",
           "mileageAndOutcomeRequired",
@@ -116,6 +111,23 @@
           "enabled",
           "remind",
           "mandatory"
+        ]
+      },
+      "InventoryCheck": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "expiryDays": {
+            "type": "integer",
+            "nullable": false
+          }
+        },
+        "required": [
+          "enabled",
+          "expiryDays"
         ]
       }
     }
