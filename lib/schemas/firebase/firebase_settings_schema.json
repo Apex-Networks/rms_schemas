@@ -11,6 +11,12 @@
       "Settings": {
         "type": "object",
         "properties": {
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": false,
+            "description": "The schema version of this repository",
+            "example": "1.1.0"
+          },
           "driverPin": {
             "type": "string",
             "nullable": false
@@ -78,6 +84,7 @@
           }
         },
         "required": [
+          "rmsSchemaVersion",
           "driverPin",
           "completedRecordsExpiryDays",
           "redeployedJobsNotified",
