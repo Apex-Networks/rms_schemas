@@ -39,8 +39,7 @@
             "nullable": false
           },
           "inventoryCheck": {
-            "$ref": "#/components/schemas/InventoryCheck",
-            "nullable": false
+            "$ref": "#/components/schemas/InventoryCheck"
           },
           "jobRiskAssessmentRequired": {
             "type": "boolean",
@@ -71,12 +70,10 @@
             "nullable": false
           },
           "fuelEntryMode": {
-            "$ref": "#/components/schemas/FuelEntryMode",
-            "nullable": false
+            "$ref": "#/components/schemas/FuelEntryMode"
           },
           "dailyVehicleCheckMode": {
-            "$ref": "#/components/schemas/DailyVehicleCheckMode",
-            "nullable": false
+            "$ref": "#/components/schemas/DailyVehicleCheckMode"
           }
         },
         "required": [

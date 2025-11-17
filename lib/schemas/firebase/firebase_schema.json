@@ -237,8 +237,7 @@
             "nullable": true
           },
          "service": {
-            "$ref": "#/components/schemas/JobService",
-            "nullable": false
+            "$ref": "#/components/schemas/JobService"
           },
           "symptom": {
             "$ref": "#/components/schemas/JobSymptom",
@@ -353,8 +352,7 @@
           "statusHistory": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/JobStatus",
-              "nullable": false
+              "$ref": "#/components/schemas/JobStatus"
             },
             "nullable": true
           }
