@@ -19,8 +19,8 @@
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": true,
-            "description": "The schema version of this repository",
-            "example": "1.1.0"
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
           },
           "driverUid": {
             "type": "string",
@@ -68,8 +68,8 @@
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": false,
-            "description": "The rms_schema repository tag / version",
-            "example": "1.1.0"
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
           },
           "account": {
             "type": "string",

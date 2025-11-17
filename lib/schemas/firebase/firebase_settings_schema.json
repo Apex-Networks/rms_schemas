@@ -14,8 +14,8 @@
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": false,
-            "description": "The schema version of this repository",
-            "example": "1.1.0"
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
           },
           "driverPin": {
             "type": "string",
