@@ -65,10 +65,6 @@
             "type": "boolean",
             "nullable": false
           },
-          "useDeviceTimeForLocation": {
-            "type": "boolean",
-            "nullable": false
-          },
           "fuelEntryMode": {
             "$ref": "#/components/schemas/FuelEntryMode"
           },
@@ -88,7 +84,6 @@
           "conditionReportsRequired",
           "mediaUploadWifiOnly",
           "gpsEnabled",
-          "useDeviceTimeForLocation",
           "fuelEntryMode",
           "dailyVehicleCheckMode"
         ]
