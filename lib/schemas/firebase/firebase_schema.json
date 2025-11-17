@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.1.2",
+    "version": "2.1.3",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -19,8 +19,8 @@
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": true,
-            "description": "The schema version of this repository",
-            "example": "1.1.0"
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
           },
           "driverUid": {
             "type": "string",
@@ -68,8 +68,8 @@
           "rmsSchemaVersion": {
             "type": "string",
             "nullable": false,
-            "description": "The rms_schema repository tag / version",
-            "example": "1.1.0"
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
           },
           "account": {
             "type": "string",
@@ -237,8 +237,7 @@
             "nullable": true
           },
          "service": {
-            "$ref": "#/components/schemas/JobService",
-            "nullable": false
+            "$ref": "#/components/schemas/JobService"
           },
           "symptom": {
             "$ref": "#/components/schemas/JobSymptom",
@@ -353,8 +352,7 @@
           "statusHistory": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/JobStatus",
-              "nullable": false
+              "$ref": "#/components/schemas/JobStatus"
             },
             "nullable": true
           }

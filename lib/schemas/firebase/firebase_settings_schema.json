@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Settings Schema",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Firebase Firestore schema for RMS driver app settings and data."
   },
   "paths": {},
@@ -11,6 +11,12 @@
       "Settings": {
         "type": "object",
         "properties": {
+          "rmsSchemaVersion": {
+            "type": "string",
+            "nullable": false,
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
+          },
           "driverPin": {
             "type": "string",
             "nullable": false
@@ -32,13 +38,8 @@
             "type": "boolean",
             "nullable": false
           },
-          "inventoryCheckRequired": {
-            "type": "boolean",
-            "nullable": false
-          },
-          "inventoryCheckExpiryDays": {
-            "type": "integer",
-            "nullable": false
+          "inventoryCheck": {
+            "$ref": "#/components/schemas/InventoryCheck"
           },
           "jobRiskAssessmentRequired": {
             "type": "boolean",
@@ -64,32 +65,25 @@
             "type": "boolean",
             "nullable": false
           },
-          "useDeviceTimeForLocation": {
-            "type": "boolean",
-            "nullable": false
-          },
           "fuelEntryMode": {
-            "$ref": "#/components/schemas/FuelEntryMode",
-            "nullable": false
+            "$ref": "#/components/schemas/FuelEntryMode"
           },
           "dailyVehicleCheckMode": {
-            "$ref": "#/components/schemas/DailyVehicleCheckMode",
-            "nullable": false
+            "$ref": "#/components/schemas/DailyVehicleCheckMode"
           }
         },
         "required": [
+          "rmsSchemaVersion",
           "driverPin",
           "completedRecordsExpiryDays",
           "redeployedJobsNotified",
-          "inventoryCheckRequired",
-          "inventoryCheckExpiryDays",
+          "inventoryCheck",
           "jobRiskAssessmentRequired",
           "driverTimeChangesRestricted",
           "mileageAndOutcomeRequired",
           "conditionReportsRequired",
           "mediaUploadWifiOnly",
           "gpsEnabled",
-          "useDeviceTimeForLocation",
           "fuelEntryMode",
           "dailyVehicleCheckMode"
         ]
@@ -109,6 +103,23 @@
           "enabled",
           "remind",
           "mandatory"
+        ]
+      },
+      "InventoryCheck": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "expiryDays": {
+            "type": "integer",
+            "nullable": false
+          }
+        },
+        "required": [
+          "enabled",
+          "expiryDays"
         ]
       }
     }
