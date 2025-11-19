@@ -53,6 +53,11 @@
             "nullable": false,
             "enum": ["rms", "rmsLitePlus", "rmsLite"]
           },
+          "settingsEditable": {
+            "type": "boolean",
+            "description": "Indicates if settings are editable",
+            "nullable": false
+          },
           "user_id": {
             "type": "string",
             "description": "User ID from the JWT claims",
@@ -67,6 +72,7 @@
           "login",
           "driverAccessToken",
           "appVariant",
+          "settingsEditable",
           "user_id"
         ]
       }
