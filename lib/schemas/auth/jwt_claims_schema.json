@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "JWT Claims",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Use this schema when sending JWT Claims data from the backend to the app"
   },
   "paths": {},
@@ -53,6 +53,11 @@
             "nullable": false,
             "enum": ["rms", "rmsLitePlus", "rmsLite"]
           },
+          "settingsEditable": {
+            "type": "boolean",
+            "description": "Indicates if settings are editable",
+            "nullable": false
+          },
           "user_id": {
             "type": "string",
             "description": "User ID from the JWT claims",
@@ -67,6 +72,7 @@
           "login",
           "driverAccessToken",
           "appVariant",
+          "settingsEditable",
           "user_id"
         ]
       }
