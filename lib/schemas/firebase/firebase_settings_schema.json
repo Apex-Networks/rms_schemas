@@ -28,7 +28,7 @@
           "mediaExpiryDays": {
             "type": "integer",
             "nullable": true,
-            "description": "This is a local setting"
+            "description": "Client-only field. Backend must not modify."
           },
           "completedRecordsExpiryDays": {
             "type": "integer",
