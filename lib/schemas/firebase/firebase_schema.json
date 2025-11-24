@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.1.3",
+    "version": "2.2.3",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -355,6 +355,10 @@
               "$ref": "#/components/schemas/JobStatus"
             },
             "nullable": true
+          },
+          "riskAssessment": {
+            "$ref": "#/components/schemas/JobRiskAssessment",
+            "nullable": true
           }
         }
       },
@@ -430,6 +434,41 @@
         },
         "required": [
           "eta"
+        ]
+      },
+      "JobRiskAssessment": {
+        "type": "object",
+        "properties": {
+          "traffic": {
+            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "nullable": false
+          },
+          "location": {
+            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "nullable": false
+          },
+          "vehicle": {
+            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "nullable": false
+          },
+          "passenger": {
+            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "nullable": false
+          }
+        },
+        "required": [
+          "traffic",
+          "location",
+          "vehicle",
+          "passenger"
+        ]
+      },
+      "JobRiskLevelValues": {
+        "type": "string",
+        "enum": [
+          "normal",
+          "increased",
+          "high"
         ]
       },
       "JobTowedItem": {
