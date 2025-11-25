@@ -61,6 +61,10 @@
             "type": "boolean",
             "nullable": false
           },
+          "addJobPartsAllowed": {
+            "type": "boolean",
+            "nullable": false
+          },
           "fuelEntryMode": {
             "$ref": "#/components/schemas/FuelEntryMode"
           },
@@ -79,6 +83,7 @@
           "conditionReportsRequired",
           "mediaUploadWifiOnly",
           "gpsEnabled",
+          "addJobPartsAllowed",
           "fuelEntryMode",
           "dailyVehicleCheckMode"
         ]
