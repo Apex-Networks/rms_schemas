@@ -17,10 +17,6 @@
             "description": "The rms_schemas repository tag / version",
             "example": "x.y.z"
           },
-          "driverPin": {
-            "type": "string",
-            "nullable": false
-          },
           "maskCallerIdPrefix": {
             "type": "string",
             "nullable": true
@@ -74,7 +70,6 @@
         },
         "required": [
           "rmsSchemaVersion",
-          "driverPin",
           "completedRecordsExpiryDays",
           "redeployedJobsNotified",
           "inventoryCheck",
