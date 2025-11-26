@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.2.3",
+    "version": "2.3.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -359,6 +359,18 @@
           "riskAssessment": {
             "$ref": "#/components/schemas/JobRiskAssessment",
             "nullable": true
+          },
+          "odometer": {
+            "type": "integer",
+            "nullable": true
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/Outcome",
+            "nullable": true
+          },
+          "faultInfo": {
+            "$ref": "#/components/schemas/FaultInfo",
+            "nullable": true
           }
         }
       },
@@ -469,6 +481,35 @@
           "normal",
           "increased",
           "high"
+        ]
+      },
+      "FaultInfo": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Outcome": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "nullable": false
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "outcome"
         ]
       },
       "JobTowedItem": {
