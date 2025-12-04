@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -370,6 +370,18 @@
           },
           "faultInfo": {
             "$ref": "#/components/schemas/FaultInfo",
+            "nullable": true
+          },
+          "recoveryConditionReport": {
+            "$ref": "#/components/schemas/JobRecoveryConditionReport",
+            "nullable": true
+          },
+          "deliveryConditionReport": {
+            "$ref": "#/components/schemas/JobDeliveryConditionReport",
+            "nullable": true
+          },
+          "vehicleCheck": {
+            "$ref": "#/components/schemas/JobVehicleCheck",
             "nullable": true
           }
         }
@@ -805,6 +817,18 @@
             "nullable": true
           }
         }
+      },
+      "JobRecoveryConditionReport": {
+        "type": "object",
+        "properties": {}
+      },
+      "JobDeliveryConditionReport": {
+        "type": "object",
+        "properties": {}
+      },
+      "JobVehicleCheck": {
+        "type": "object",
+        "properties": {}
       }
     }
   }
