@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -783,7 +783,7 @@
             "nullable": true
           },
           "odometer": {
-            "type": "string",
+            "type": "integer",
             "x-mapped-to": "JobVehicleOdometer",
             "x-used-in-legacy-notes-section": true,
             "nullable": true
