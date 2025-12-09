@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.5.0",
+    "version": "2.6.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
