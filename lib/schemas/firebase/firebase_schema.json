@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Firebase Job Schema",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -368,8 +368,8 @@
             "$ref": "#/components/schemas/Outcome",
             "nullable": true
           },
-          "faultInfo": {
-            "$ref": "#/components/schemas/FaultInfo",
+          "fault": {
+            "$ref": "#/components/schemas/Fault",
             "nullable": true
           },
           "recoveryConditionReport": {
@@ -495,7 +495,7 @@
           "high"
         ]
       },
-      "FaultInfo": {
+      "Fault": {
         "type": "object",
         "properties": {
           "code": {
