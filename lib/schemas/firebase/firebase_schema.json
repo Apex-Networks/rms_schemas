@@ -498,20 +498,19 @@
       "FaultInfo": {
         "type": "object",
         "properties": {
-          "category": {
+          "code": {
             "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
+            "nullable": false
           }
-        }
+        },
+        "required": [
+          "code"
+        ]
       },
       "Outcome": {
         "type": "object",
         "properties": {
-          "outcome": {
+          "code": {
             "type": "string",
             "nullable": false
           },
@@ -521,7 +520,7 @@
           }
         },
         "required": [
-          "outcome"
+          "code"
         ]
       },
       "JobTowedItem": {
