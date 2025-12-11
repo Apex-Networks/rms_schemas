@@ -577,6 +577,10 @@
             "type": "string",
             "nullable": false
           },
+          "category": {
+            "type": "string",
+            "nullable": false
+          },
           "description": {
             "type": "string",
             "nullable": false
@@ -584,6 +588,7 @@
         },
         "required": [
           "code",
+          "category",
           "description"
         ]
       },
