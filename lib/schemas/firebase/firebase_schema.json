@@ -523,6 +523,70 @@
           "code"
         ]
       },
+      "OutcomeCodes": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCode"
+            },
+            "nullable": false
+          }
+        },
+        "required": [
+          "codes"
+        ]
+      },
+      "OutcomeCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "code",
+          "description"
+        ]
+      },
+      "FaultCodes": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FaultCode"
+            },
+            "nullable": false
+          }
+        },
+        "required": [
+          "codes"
+        ]
+      },
+      "FaultCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "code",
+          "description"
+        ]
+      },
       "JobTowedItem": {
         "type": "object",
         "properties": {
