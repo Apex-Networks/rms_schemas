@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Firebase Job Schema",
-    "version": "2.5.0",
+    "title": "Job Schema",
+    "version": "2.7.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -368,8 +368,8 @@
             "$ref": "#/components/schemas/Outcome",
             "nullable": true
           },
-          "faultInfo": {
-            "$ref": "#/components/schemas/FaultInfo",
+          "fault": {
+            "$ref": "#/components/schemas/Fault",
             "nullable": true
           },
           "recoveryConditionReport": {
@@ -495,23 +495,22 @@
           "high"
         ]
       },
-      "FaultInfo": {
+      "Fault": {
         "type": "object",
         "properties": {
-          "category": {
+          "code": {
             "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
+            "nullable": false
           }
-        }
+        },
+        "required": [
+          "code"
+        ]
       },
       "Outcome": {
         "type": "object",
         "properties": {
-          "outcome": {
+          "code": {
             "type": "string",
             "nullable": false
           },
@@ -521,9 +520,10 @@
           }
         },
         "required": [
-          "outcome"
+          "code"
         ]
       },
+
       "JobTowedItem": {
         "type": "object",
         "properties": {
