@@ -1,17 +1,18 @@
 # RMS Schemas
 
-A Dart package containing OpenAPI schema definitions for RMS (Recovery Management System) data structures.
+A Dart package containing OpenAPI schema definitions for RMS data structures.
 
 ## 📖 Interactive Documentation
 
 Quick Links:
 
-- **[Firebase Jobs Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_schema.json)** - Job and Deltas data structures
-- **[Firebase Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/firebase_settings_schema.json)** - Settings data structure
-- **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)** - User authentication structures
-- **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)** - JWT token claims
+- **[Job Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json)**
+- **[Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json)**
+- **[Fault and Outcome Codes Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/fault_outcome_codes_schema.json)**
+- **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)**
+- **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)**
 
-> 💡 Click any link above for clean, interactive schema visualization!
+> 💡 Click any link above for clean, interactive schema visualization
 
 ## Overview
 
@@ -21,8 +22,9 @@ This repository provides OpenAPI schema definitions for RMS (Recovery Management
 
 ### Firebase Schemas
 
-- **Firebase Jobs Schema** (`lib/schemas/firebase/firebase_schema.json`) - OpenAPI 3.0.3 schema for Firebase Firestore data transfer objects
-- **Firebase Settings Schema** (`lib/schemas/firebase/firebase_settings_schema.json`) - OpenAPI 3.0.3 schema for Firebase Firestore data transfer objects
+- **Job schema** (`lib/schemas/firebase/job_schema.json`)
+- **Settings Schema** (`lib/schemas/firebase/settings_schema.json`)
+- **Fault and Outcome Codes Schema** (`lib/schemas/firebase/fault_outcome_codes_schema.json`)
 
 ### Authentication Schemas
 
