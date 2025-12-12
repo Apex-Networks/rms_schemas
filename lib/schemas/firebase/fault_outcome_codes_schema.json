@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fault and Outcome Codes Schema",
+    "version": "1.0.0",
+    "description": "Schema for fault and outcome codes used in job reporting"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "FaultCodes": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FaultCode"
+            },
+            "nullable": false
+          }
+        },
+        "required": [
+          "codes"
+        ]
+      },
+      "FaultCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false
+          },
+          "category": {
+            "type": "string",
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "code",
+          "category",
+          "description"
+        ]
+      },
+      "OutcomeCodes": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCode"
+            },
+            "nullable": false
+          }
+        },
+        "required": [
+          "codes"
+        ]
+      },
+      "OutcomeCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "code",
+          "description"
+        ]
+      }
+    }
+  }
+}

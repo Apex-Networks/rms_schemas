@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Firebase Settings Schema",
-    "version": "0.1.0",
+    "title": "Settings Schema",
+    "version": "0.1.1",
     "description": "Firebase Firestore schema for RMS driver app settings and data."
   },
   "paths": {},

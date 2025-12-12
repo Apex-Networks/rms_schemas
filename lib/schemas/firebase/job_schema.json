@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Firebase Job Schema",
-    "version": "2.6.1",
+    "title": "Job Schema",
+    "version": "2.7.0",
     "description": "Consolidated schema for all Firebase Job data structures"
   },
   "paths": {},
@@ -523,75 +523,7 @@
           "code"
         ]
       },
-      "OutcomeCodes": {
-        "type": "object",
-        "properties": {
-          "codes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OutcomeCode"
-            },
-            "nullable": false
-          }
-        },
-        "required": [
-          "codes"
-        ]
-      },
-      "OutcomeCode": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": false
-          },
-          "description": {
-            "type": "string",
-            "nullable": false
-          }
-        },
-        "required": [
-          "code",
-          "description"
-        ]
-      },
-      "FaultCodes": {
-        "type": "object",
-        "properties": {
-          "codes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FaultCode"
-            },
-            "nullable": false
-          }
-        },
-        "required": [
-          "codes"
-        ]
-      },
-      "FaultCode": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": false
-          },
-          "category": {
-            "type": "string",
-            "nullable": false
-          },
-          "description": {
-            "type": "string",
-            "nullable": false
-          }
-        },
-        "required": [
-          "code",
-          "category",
-          "description"
-        ]
-      },
+
       "JobTowedItem": {
         "type": "object",
         "properties": {
