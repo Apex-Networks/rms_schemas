@@ -1,0 +1,89 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Message Schema",
+		"version": "0.1.0",
+		"description": "Firebase Firestore schema for RMS driver app messages."
+	},
+	"paths": {},
+	"components": {
+		"schemas": {
+			"Message": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"nullable": true,
+						"description": "Backend ID linking replies"
+					},
+					"jobInfo": {
+						"$ref": "#/components/schemas/MessageJobInfo",
+						"nullable": true,
+						"description": "General messages are not linked to any job"
+					},
+					"driverId": {
+						"type": "integer",
+						"nullable": false
+					},
+					"sender": {
+						"$ref": "#/components/schemas/MessageSender"
+					},
+					"text": {
+						"type": "string",
+						"nullable": false
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": false
+					},
+					"readAt": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"required": [
+					"driverId",
+					"sender",
+					"text",
+					"createdAt"
+				]
+			},
+			"MessageSender": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"nullable": true,
+						"description": "Driver's id or null for dispatcher"
+					},
+					"name": {
+						"type": "string",
+						"nullable": false
+					}
+				},
+				"required": [
+					"name"
+				]
+			},
+			"MessageJobInfo": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"nullable": false
+					},
+					"docId": {
+						"type": "integer",
+						"nullable": false
+					}
+				},
+				"required": [
+					"id",
+					"docId"
+				]
+			}
+		}
+	}
+}
