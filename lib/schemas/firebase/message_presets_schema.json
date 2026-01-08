@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Presets Schema",
+    "version": "0.0.1",
+    "description": "Schema for presets data"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Presets": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "nullable": false,
+            "items": {
+              "$ref": "#/components/schemas/Preset"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "Preset": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": false
+          },
+          "text": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "name",
+          "text"
+        ]
+      }
+    }
+  }
+}
