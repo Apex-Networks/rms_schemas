@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Job Schema",
+    "title": "Jobs Schema",
     "version": "2.7.0",
-    "description": "Consolidated schema for all Firebase Job data structures"
+    "description": "Schema for job data"
   },
   "paths": {},
   "components": {
@@ -372,6 +372,10 @@
             "$ref": "#/components/schemas/Fault",
             "nullable": true
           },
+          "roadsideConditionReport": {
+            "$ref": "#/components/schemas/JobRoadsideConditionReport",
+            "nullable": true
+          },
           "recoveryConditionReport": {
             "$ref": "#/components/schemas/JobRecoveryConditionReport",
             "nullable": true
@@ -651,6 +655,13 @@
             "x-mapped-to": "JobOwnerPhone",
             "nullable": true
           },
+          "emailReportRecipientList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
           "postcode": {
             "type": "string",
             "x-mapped-to": "JobOwnerPostcode",
@@ -818,13 +829,250 @@
           }
         }
       },
+      "ConditionSignature": {
+        "type": "object",
+        "properties": {
+          "signerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "refusedOrUnable": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "acceptedStatements": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "signatureImageBase64": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "JobRoadsideConditionReport": {
+        "type": "object",
+        "properties": {
+          "acceptanceStatementIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerConfirmation": {
+            "$ref": "#/components/schemas/ConditionSignature",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RecoveryTimeOfDay": {
+        "type": "string",
+        "enum": [
+          "day",
+          "night"
+        ]
+      },
+      "RecoveryLiftType": {
+        "type": "string",
+        "enum": [
+          "rearLift",
+          "frontLift",
+          "totalLift",
+          "straightBar"
+        ]
+      },
+      "DamageStrokeColor": {
+        "type": "string",
+        "enum": [
+          "broken",
+          "notApplicable",
+          "damaged"
+        ]
+      },
+      "DamagePoint": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "format": "double"
+          },
+          "y": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "x",
+          "y"
+        ]
+      },
+      "DamageStroke": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "$ref": "#/components/schemas/DamageStrokeColor"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DamagePoint"
+            }
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "default": 3.0
+          }
+        },
+        "required": [
+          "color",
+          "points"
+        ]
+      },
       "JobRecoveryConditionReport": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "vehicleClean": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "vehicleDirty": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "vehicleWet": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "vehicleObscured": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "timeOfDay": {
+            "$ref": "#/components/schemas/RecoveryTimeOfDay",
+            "nullable": true
+          },
+          "weatherRaining": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "weatherSnowing": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "weatherFog": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "itemsPresentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "liftType": {
+            "$ref": "#/components/schemas/RecoveryLiftType",
+            "nullable": true
+          },
+          "propShaftRemoved": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "halfShaftRemoved": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "brakesReleased": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "llc": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "zeroWheelsOnGround": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "numberOfWheelsOnGround": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "vehicleType": {
+            "type": "string",
+            "nullable": true
+          },
+          "damageStrokes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DamageStroke"
+            },
+            "nullable": true
+          },
+          "noDamage": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "damageImageBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "unattendedDeliveryAuthority": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "inspectionNotPractical": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "otherComments": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerConfirmation": {
+            "$ref": "#/components/schemas/ConditionSignature",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        }
       },
       "JobDeliveryConditionReport": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "sameConditionAsRecovery": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "viewedRecoveryReport": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "conditionReport": {
+            "$ref": "#/components/schemas/JobRecoveryConditionReport",
+            "nullable": true
+          },
+          "customerConfirmation": {
+            "$ref": "#/components/schemas/ConditionSignature",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        }
       },
       "JobVehicleCheck": {
         "type": "object",

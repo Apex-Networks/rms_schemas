@@ -4,13 +4,16 @@ A Dart package containing OpenAPI schema definitions for RMS data structures.
 
 ## 📖 Interactive Documentation
 
-Quick Links:
-
-- **[Job Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json)**
-- **[Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json)**
-- **[Fault and Outcome Codes Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/fault_outcome_codes_schema.json)**
-- **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)**
-- **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)**
+| Category | Schema | View |
+|----------|--------|------|
+| **Authentication** | Authentication Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json) |
+| | JWT Claims Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json) |
+| **Job** | Job Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json) |
+| **Lookups** | Job Acceptance Statements | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_acceptance_statements_schema.json) |
+| | Job Fault Codes | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_fault_codes_schema.json) |
+| | Job Items Present | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_items_present_schema.json) |
+| | Job Outcome Codes | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_outcome_codes_schema.json) |
+| **Settings** | Settings Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json) |
 
 > 💡 Click any link above for clean, interactive schema visualization
 
@@ -20,16 +23,19 @@ This repository provides OpenAPI schema definitions for RMS (Recovery Management
 
 ## Schemas Included
 
-### Firebase Schemas
-
-- **Job schema** (`lib/schemas/firebase/job_schema.json`)
-- **Settings Schema** (`lib/schemas/firebase/settings_schema.json`)
-- **Fault and Outcome Codes Schema** (`lib/schemas/firebase/fault_outcome_codes_schema.json`)
-
 ### Authentication Schemas
 
-- **Authentication Schema** (`lib/schemas/auth/authentication_schema.json`) - Schema for authentication data structures
-- **JWT Claims Schema** (`lib/schemas/auth/jwt_claims_schema.json`) - Schema for JWT token claims
+- **Authentication** (`lib/schemas/auth/authentication_schema.json`) - Schema for authentication data structures
+- **JWT Claims** (`lib/schemas/auth/jwt_claims_schema.json`) - Schema for JWT token claims
+
+### Firebase Schemas
+
+- **Job** (`lib/schemas/firebase/job_schema.json`)
+- **Job Acceptance Statements** (`lib/schemas/firebase/job_acceptance_statements_schema.json`)
+- **Job Fault Codes** (`lib/schemas/firebase/job_fault_codes_schema.json`)
+- **Job Items Present** (`lib/schemas/firebase/job_items_present_schema.json`)
+- **Job Outcome Codes** (`lib/schemas/firebase/job_outcome_codes_schema.json`)
+- **Settings** (`lib/schemas/firebase/settings_schema.json`)
 
 ## Installation
 
