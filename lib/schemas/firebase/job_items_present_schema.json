@@ -24,20 +24,6 @@
           "id",
           "name"
         ]
-      },
-      "ItemsPresent": {
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ItemPresent"
-            }
-          }
-        },
-        "required": [
-          "items"
-        ]
       }
     }
   }

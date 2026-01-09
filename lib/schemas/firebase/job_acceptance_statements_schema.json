@@ -24,20 +24,6 @@
           "id",
           "statement"
         ]
-      },
-      "AcceptanceStatements": {
-        "type": "object",
-        "properties": {
-          "statements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AcceptanceStatement"
-            }
-          }
-        },
-        "required": [
-          "statements"
-        ]
       }
     }
   }
