@@ -2,7 +2,7 @@
 	"openapi": "3.0.3",
 	"info": {
 		"title": "Message Schema",
-		"version": "0.1.0",
+		"version": "0.0.1",
 		"description": "Firebase Firestore schema for RMS driver app messages."
 	},
 	"paths": {},
