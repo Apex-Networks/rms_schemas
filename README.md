@@ -9,6 +9,8 @@ Quick Links:
 - **[Job Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json)**
 - **[Settings Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json)**
 - **[Fault and Outcome Codes Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/fault_outcome_codes_schema.json)**
+- **[Message Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_schema.json)**
+- **[Message Presets Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_presets_schema.json)**
 - **[Authentication Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)**
 - **[JWT Claims Schema](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)**
 
@@ -25,6 +27,8 @@ This repository provides OpenAPI schema definitions for RMS (Recovery Management
 - **Job schema** (`lib/schemas/firebase/job_schema.json`)
 - **Settings Schema** (`lib/schemas/firebase/settings_schema.json`)
 - **Fault and Outcome Codes Schema** (`lib/schemas/firebase/fault_outcome_codes_schema.json`)
+- **Message Schema** (`lib/schemas/firebase/message_schema.json`)
+- **Message Presets Schema** (`lib/schemas/firebase/message_presets_schema.json`)
 
 ### Authentication Schemas
 
