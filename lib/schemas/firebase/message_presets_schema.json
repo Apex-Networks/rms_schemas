@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Message Presets Schema",
+    "version": "0.0.1",
+    "description": "Firebase Firestore schema for RMS driver app message presets."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "MessagePresets": {
+        "type": "object",
+        "properties": {
+          "presets": {
+            "type": "array",
+            "nullable": false,
+            "items": {
+              "$ref": "#/components/schemas/MessagePreset"
+            }
+          }
+        },
+        "required": [
+          "presets"
+        ]
+      },
+      "MessagePreset": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": false
+          },
+          "text": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "name",
+          "text"
+        ]
+      }
+    }
+  }
+}
