@@ -29,7 +29,7 @@
             "nullable": true
           },
           "jobsFeature": {
-            "$ref": "#/components/schemas/JobUserUpdates",
+            "$ref": "#/components/schemas/UserUpdates",
             "nullable": true
           },
           "activitiesFeature": {
@@ -143,7 +143,7 @@
             "nullable": false
           },
           "destination": {
-            "$ref": "#/components/schemas/JobDestination",
+            "$ref": "#/components/schemas/Destination",
             "nullable": true
           },
           "docId": {
@@ -168,7 +168,7 @@
             "nullable": true
           },
           "incomingEventType": {
-            "$ref": "#/components/schemas/JobIncomingEventTypeValues",
+            "$ref": "#/components/schemas/IncomingEventTypeValues",
             "nullable": true
           },
           "hasSpecialNeeds": {
@@ -199,7 +199,7 @@
             "nullable": false
           },
           "location": {
-            "$ref": "#/components/schemas/JobLocation",
+            "$ref": "#/components/schemas/Location",
             "nullable": true
           },
           "locationOfKeys": {
@@ -214,15 +214,15 @@
             "nullable": false
           },
           "owner": {
-            "$ref": "#/components/schemas/JobOwner",
+            "$ref": "#/components/schemas/Owner",
             "nullable": true
           },
           "passengers": {
-            "$ref": "#/components/schemas/JobPassengers",
+            "$ref": "#/components/schemas/Passengers",
             "nullable": true
           },
           "priority": {
-            "$ref": "#/components/schemas/JobPriority",
+            "$ref": "#/components/schemas/Priority",
             "nullable": true
           },
           "requiredTowType": {
@@ -236,23 +236,23 @@
             "x-mapped-to": "JobRingOnApproachMinutes",
             "nullable": true
           },
-         "service": {
-            "$ref": "#/components/schemas/JobService"
+          "service": {
+            "$ref": "#/components/schemas/Service"
           },
           "symptom": {
-            "$ref": "#/components/schemas/JobSymptom",
+            "$ref": "#/components/schemas/Symptom",
             "nullable": true
           },
           "towedItem": {
-            "$ref": "#/components/schemas/JobTowedItem",
+            "$ref": "#/components/schemas/TowedItem",
             "nullable": true
           },
           "rmsJobType": {
-            "$ref": "#/components/schemas/JobRMSTypeValues",
+            "$ref": "#/components/schemas/RMSTypeValues",
             "nullable": true
           },
           "vehicle": {
-            "$ref": "#/components/schemas/JobVehicle",
+            "$ref": "#/components/schemas/Vehicle",
             "nullable": true
           },
           "vvrfAccountId": {
@@ -261,7 +261,7 @@
             "nullable": true
           },
           "userUpdates": {
-            "$ref": "#/components/schemas/JobUserUpdates",
+            "$ref": "#/components/schemas/UserUpdates",
             "nullable": true
           }
         },
@@ -278,7 +278,7 @@
           "rmsSchemaVersion"
         ]
       },
-      "JobIncomingEventTypeValues": {
+      "IncomingEventTypeValues": {
         "type": "string",
         "enum": [
           "newJob",
@@ -286,14 +286,14 @@
           "cancelledJob"
         ]
       },
-      "JobRMSTypeValues": {
+      "RMSTypeValues": {
         "type": "string",
         "enum": [
           "recovery",
           "redelivery"
         ]
       },
-      "JobVehicleFuelTypeValues": {
+      "VehicleFuelTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleFuelType",
         "enum": [
@@ -306,7 +306,7 @@
           "other"
         ]
       },
-      "JobVehicleTransmissionTypeValues": {
+      "VehicleTransmissionTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleTransmissionType",
         "enum": [
@@ -317,7 +317,7 @@
           "unknown"
         ]
       },
-      "JobVehicleTypeValues": {
+      "VehicleTypeValues": {
         "type": "string",
         "x-mapped-to": "JobVehicleClass",
         "enum": [
@@ -329,7 +329,7 @@
           "van"
         ]
       },
-      "JobUserUpdates": {
+      "UserUpdates": {
         "type": "object",
         "properties": {
           "docId": {
@@ -338,26 +338,26 @@
             "nullable": true
           },
           "jobAcceptance": {
-            "$ref": "#/components/schemas/JobAcceptance",
+            "$ref": "#/components/schemas/Acceptance",
             "nullable": true
           },
           "jobRejection": {
-            "$ref": "#/components/schemas/JobRejectionReasonValues",
+            "$ref": "#/components/schemas/RejectionReasonValues",
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/JobStatus",
+            "$ref": "#/components/schemas/Status",
             "nullable": true
           },
           "statusHistory": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/JobStatus"
+              "$ref": "#/components/schemas/Status"
             },
             "nullable": true
           },
           "riskAssessment": {
-            "$ref": "#/components/schemas/JobRiskAssessment",
+            "$ref": "#/components/schemas/RiskAssessment",
             "nullable": true
           },
           "odometer": {
@@ -373,28 +373,28 @@
             "nullable": true
           },
           "roadsideConditionReport": {
-            "$ref": "#/components/schemas/JobRoadsideConditionReport",
+            "$ref": "#/components/schemas/RoadsideConditionReport",
             "nullable": true
           },
           "recoveryConditionReport": {
-            "$ref": "#/components/schemas/JobRecoveryConditionReport",
+            "$ref": "#/components/schemas/RecoveryConditionReport",
             "nullable": true
           },
           "deliveryConditionReport": {
-            "$ref": "#/components/schemas/JobDeliveryConditionReport",
+            "$ref": "#/components/schemas/DeliveryConditionReport",
             "nullable": true
           },
           "vehicleCheck": {
-            "$ref": "#/components/schemas/JobVehicleCheck",
+            "$ref": "#/components/schemas/VehicleCheck",
             "nullable": true
           }
         }
       },
-      "JobStatus": {
+      "Status": {
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/JobStatusValues"
+            "$ref": "#/components/schemas/StatusValues"
           },
           "timestamp": {
             "type": "string",
@@ -406,7 +406,7 @@
           "timestamp"
         ]
       },
-      "JobStatusValues": {
+      "StatusValues": {
         "type": "string",
         "enum": [
           "none",
@@ -419,7 +419,7 @@
           "cancelled"
         ]
       },
-      "JobRejectionReasonValues": {
+      "RejectionReasonValues": {
         "type": "string",
         "enum": [
           "nightControl",
@@ -446,7 +446,7 @@
         ],
         "description": "Reasons why a job may be refused by an agent or provider."
       },
-      "JobAcceptance": {
+      "Acceptance": {
         "type": "object",
         "properties": {
           "eta": {
@@ -464,23 +464,23 @@
           "eta"
         ]
       },
-      "JobRiskAssessment": {
+      "RiskAssessment": {
         "type": "object",
         "properties": {
           "traffic": {
-            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "$ref": "#/components/schemas/RiskLevelValues",
             "nullable": false
           },
           "location": {
-            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "$ref": "#/components/schemas/RiskLevelValues",
             "nullable": false
           },
           "vehicle": {
-            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "$ref": "#/components/schemas/RiskLevelValues",
             "nullable": false
           },
           "passenger": {
-            "$ref": "#/components/schemas/JobRiskLevelValues",
+            "$ref": "#/components/schemas/RiskLevelValues",
             "nullable": false
           }
         },
@@ -491,7 +491,7 @@
           "passenger"
         ]
       },
-      "JobRiskLevelValues": {
+      "RiskLevelValues": {
         "type": "string",
         "enum": [
           "normal",
@@ -527,8 +527,7 @@
           "code"
         ]
       },
-
-      "JobTowedItem": {
+      "TowedItem": {
         "type": "object",
         "properties": {
           "axleType": {
@@ -572,7 +571,7 @@
           }
         }
       },
-      "JobDestination": {
+      "Destination": {
         "type": "object",
         "properties": {
           "code": {
@@ -593,7 +592,7 @@
           }
         }
       },
-      "JobService": {
+      "Service": {
         "type": "object",
         "properties": {
           "id": {
@@ -605,7 +604,7 @@
           "id"
         ]
       },
-      "JobLocation": {
+      "Location": {
         "type": "object",
         "properties": {
           "code": {
@@ -626,7 +625,7 @@
           }
         }
       },
-      "JobOwner": {
+      "Owner": {
         "type": "object",
         "properties": {
           "address": {
@@ -670,7 +669,7 @@
           }
         }
       },
-      "JobPassengers": {
+      "Passengers": {
         "type": "object",
         "description": "The number of passengers in the vehicle",
         "properties": {
@@ -688,7 +687,7 @@
           }
         }
       },
-      "JobPriority": {
+      "Priority": {
         "type": "object",
         "properties": {
           "detail": {
@@ -705,7 +704,7 @@
           }
         }
       },
-      "JobSymptom": {
+      "Symptom": {
         "type": "object",
         "properties": {
           "code": {
@@ -720,7 +719,7 @@
           }
         }
       },
-      "JobVehicle": {
+      "Vehicle": {
         "type": "object",
         "properties": {
           "axleType": {
@@ -730,7 +729,7 @@
             "nullable": true
           },
           "type": {
-            "$ref": "#/components/schemas/JobVehicleTypeValues",
+            "$ref": "#/components/schemas/VehicleTypeValues",
             "nullable": true
           },
           "colour": {
@@ -751,7 +750,7 @@
             "nullable": true
           },
           "fuelType": {
-            "$ref": "#/components/schemas/JobVehicleFuelTypeValues",
+            "$ref": "#/components/schemas/VehicleFuelTypeValues",
             "nullable": true
           },
           "grossWeight": {
@@ -812,7 +811,7 @@
             "nullable": true
           },
           "transmissionType": {
-            "$ref": "#/components/schemas/JobVehicleTransmissionTypeValues",
+            "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
             "nullable": true
           },
           "vin": {
@@ -850,7 +849,7 @@
           }
         }
       },
-      "JobRoadsideConditionReport": {
+      "RoadsideConditionReport": {
         "type": "object",
         "properties": {
           "acceptanceStatementIds": {
@@ -938,7 +937,7 @@
           "points"
         ]
       },
-      "JobRecoveryConditionReport": {
+      "RecoveryConditionReport": {
         "type": "object",
         "properties": {
           "vehicleClean": {
@@ -1049,7 +1048,7 @@
           }
         }
       },
-      "JobDeliveryConditionReport": {
+      "DeliveryConditionReport": {
         "type": "object",
         "properties": {
           "sameConditionAsRecovery": {
@@ -1061,7 +1060,7 @@
             "nullable": true
           },
           "conditionReport": {
-            "$ref": "#/components/schemas/JobRecoveryConditionReport",
+            "$ref": "#/components/schemas/RecoveryConditionReport",
             "nullable": true
           },
           "customerConfirmation": {
@@ -1074,7 +1073,7 @@
           }
         }
       },
-      "JobVehicleCheck": {
+      "VehicleCheck": {
         "type": "object",
         "properties": {}
       }
