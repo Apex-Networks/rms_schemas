@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Outcome Codes Schema",
+    "version": "1.0.0",
+    "description": "Schema for outcome codes used in job reporting"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "OutcomeCodes": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCode"
+            },
+            "nullable": false
+          }
+        },
+        "required": [
+          "codes"
+        ]
+      },
+      "OutcomeCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "code",
+          "description"
+        ]
+      }
+    }
+  }
+}

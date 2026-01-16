@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Fault and Outcome Codes Schema",
-    "version": "1.0.0",
-    "description": "Schema for fault and outcome codes used in job reporting"
+    "title": "Fault Codes Schema",
+    "version": "1.0.1",
+    "description": "Schema for fault codes used in job reporting"
   },
   "paths": {},
   "components": {
@@ -42,38 +42,6 @@
         "required": [
           "code",
           "category",
-          "description"
-        ]
-      },
-      "OutcomeCodes": {
-        "type": "object",
-        "properties": {
-          "codes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OutcomeCode"
-            },
-            "nullable": false
-          }
-        },
-        "required": [
-          "codes"
-        ]
-      },
-      "OutcomeCode": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": false
-          },
-          "description": {
-            "type": "string",
-            "nullable": false
-          }
-        },
-        "required": [
-          "code",
           "description"
         ]
       }
