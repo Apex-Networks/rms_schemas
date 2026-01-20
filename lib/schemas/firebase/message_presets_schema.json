@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Presets Schema",
+    "title": "Message Presets Schema",
     "version": "0.0.1",
-    "description": "Schema for presets data"
+    "description": "Schema for message presets data"
   },
   "paths": {},
   "components": {

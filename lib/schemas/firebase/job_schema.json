@@ -50,7 +50,7 @@
           },
           "messagesFeature": {
             "x-model-name": "Message",
-            "$ref": "#/components/schemas/Message",
+            "$ref": "./message_schema.json#/components/schemas/Message",
             "nullable": true
           },
           "formsFeature": {
