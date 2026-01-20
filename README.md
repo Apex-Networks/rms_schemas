@@ -14,6 +14,8 @@ A Dart package containing OpenAPI schema definitions for RMS data structures.
 | | Job Items Present | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_items_present_schema.json) |
 | | Job Outcome Codes | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_outcome_codes_schema.json) |
 | **Settings** | Settings Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json) |
+| **Messages** | Messages Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_schema.json) |
+| | Message Presets Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_presets_schema.json) |
 
 > 💡 Click any link above for clean, interactive schema visualization
 
@@ -36,6 +38,8 @@ This repository provides OpenAPI schema definitions for RMS (Recovery Management
 - **Job Items Present** (`lib/schemas/firebase/job_items_present_schema.json`)
 - **Job Outcome Codes** (`lib/schemas/firebase/job_outcome_codes_schema.json`)
 - **Settings** (`lib/schemas/firebase/settings_schema.json`)
+- **Message Schema** (`lib/schemas/firebase/message_schema.json`)
+- **Message Presets Schema** (`lib/schemas/firebase/message_presets_schema.json`)
 
 ## Installation
 

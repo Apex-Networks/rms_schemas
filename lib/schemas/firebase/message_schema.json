@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Message Schema",
+    "version": "0.0.1",
+    "description": "Schema for message data"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true,
+            "description": "Backend ID linking replies"
+          },
+          "docId": {
+            "type": "string",
+            "description": "The unique document id for this message in Firebase Firestore",
+            "nullable": false
+          },
+          "jobInfo": {
+            "$ref": "#/components/schemas/JobInfo",
+            "nullable": true,
+            "description": "General messages are not linked to any job"
+          },
+          "driverUid": {
+            "type": "string",
+            "nullable": false
+          },
+          "sender": {
+            "$ref": "#/components/schemas/Sender",
+            "nullable": false
+          },
+          "text": {
+            "type": "string",
+            "nullable": false
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp",
+            "nullable": false
+          },
+          "readAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp",
+            "nullable": true
+          }
+        },
+        "required": [
+          "docId",
+          "driverUid",
+          "sender",
+          "text",
+          "createdAt"
+        ]
+      },
+      "Sender": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "JobInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": false
+          },
+          "docId": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "id",
+          "docId"
+        ]
+      }
+    }
+  }
+}
