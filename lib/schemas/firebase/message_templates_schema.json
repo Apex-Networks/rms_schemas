@@ -1,21 +1,21 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Message Presets Schema",
-    "version": "0.0.1",
-    "description": "Schema for message presets data"
+    "title": "Message Templates Schema",
+    "version": "0.1.0",
+    "description": "Schema for message templates data"
   },
   "paths": {},
   "components": {
     "schemas": {
-      "Presets": {
+      "MessageTemplates": {
         "type": "object",
         "properties": {
           "items": {
             "type": "array",
             "nullable": false,
             "items": {
-              "$ref": "#/components/schemas/Preset"
+              "$ref": "#/components/schemas/MessageTemplate"
             }
           }
         },
@@ -23,7 +23,7 @@
           "items"
         ]
       },
-      "Preset": {
+      "MessageTemplate": {
         "type": "object",
         "properties": {
           "name": {
