@@ -2,18 +2,18 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Schema",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Schema for message data"
   },
   "paths": {},
   "components": {
     "schemas": {
-      "Message": {
+      "IncomingMessage": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "nullable": true,
+            "nullable": false,
             "description": "Backend ID linking replies"
           },
           "docId": {
@@ -21,17 +21,12 @@
             "description": "The unique document id for this message in Firebase Firestore",
             "nullable": false
           },
-          "jobInfo": {
-            "$ref": "#/components/schemas/JobInfo",
-            "nullable": true,
-            "description": "General messages are not linked to any job"
-          },
           "driverUid": {
             "type": "string",
             "nullable": false
           },
-          "sender": {
-            "$ref": "#/components/schemas/Sender",
+          "senderName": {
+            "type": "string",
             "nullable": false
           },
           "text": {
@@ -44,31 +39,58 @@
             "x-firestore-type": "timestamp",
             "nullable": false
           },
-          "readAt": {
-            "type": "string",
-            "format": "date-time",
-            "x-firestore-type": "timestamp",
-            "nullable": true
+          "jobInfo": {
+            "$ref": "#/components/schemas/JobInfo",
+            "nullable": true,
+            "description": "General messages are not linked to any job"
           }
         },
         "required": [
+          "id",
           "docId",
           "driverUid",
-          "sender",
+          "senderName",
           "text",
           "createdAt"
         ]
       },
-      "Sender": {
+      "OutgoingMessage": {
         "type": "object",
         "properties": {
-          "name": {
+          "id": {
+            "type": "string",
+            "nullable": true,
+            "description": "Backend ID linking replies"
+          },
+          "driverUid": {
             "type": "string",
             "nullable": false
+          },
+          "senderName": {
+            "type": "string",
+            "nullable": false
+          },
+          "text": {
+            "type": "string",
+            "nullable": false
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp",
+            "nullable": false
+          },
+          "jobInfo": {
+            "$ref": "#/components/schemas/JobInfo",
+            "nullable": true,
+            "description": "General messages are not linked to any job"
           }
         },
         "required": [
-          "name"
+          "driverUid",
+          "senderName",
+          "text",
+          "createdAt"
         ]
       },
       "JobInfo": {

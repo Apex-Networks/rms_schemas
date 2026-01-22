@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.9.0",
+    "version": "2.10.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -49,8 +49,8 @@
             "properties": {}
           },
           "messagesFeature": {
-            "x-model-name": "Message",
-            "$ref": "./message_schema.json#/components/schemas/Message",
+            "x-model-name": "OutgoingMessage",
+            "$ref": "./message_schema.json#/components/schemas/OutgoingMessage",
             "nullable": true
           },
           "formsFeature": {
