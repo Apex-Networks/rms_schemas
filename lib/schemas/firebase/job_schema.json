@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.10.0",
+    "version": "2.11.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -29,7 +29,7 @@
             "nullable": true
           },
           "jobsFeature": {
-            "$ref": "#/components/schemas/UserUpdates",
+            "$ref": "#/components/schemas/UserJobUpdates",
             "nullable": true
           },
           "activitiesFeature": {
@@ -261,8 +261,8 @@
             "x-mapped-to": "JobVVRFAccountId",
             "nullable": true
           },
-          "userUpdates": {
-            "$ref": "#/components/schemas/UserUpdates",
+          "userJobUpdates": {
+            "$ref": "#/components/schemas/UserJobUpdates",
             "nullable": true
           }
         },
@@ -330,7 +330,7 @@
           "van"
         ]
       },
-      "UserUpdates": {
+      "UserJobUpdates": {
         "type": "object",
         "properties": {
           "docId": {
