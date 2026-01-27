@@ -94,6 +94,20 @@
           "id",
           "docId"
         ]
+      },
+      "MessageUpdates": {
+        "type": "object",
+        "properties": {
+          "outgoingMessage": {
+            "$ref": "#/components/schemas/OutgoingMessage",
+            "nullable": true
+          },
+          "readMessageId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": []
       }
     }
   }
