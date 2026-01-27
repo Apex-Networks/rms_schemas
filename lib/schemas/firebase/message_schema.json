@@ -57,19 +57,6 @@
       "OutgoingMessage": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true,
-            "description": "Backend ID linking replies"
-          },
-          "driverUid": {
-            "type": "string",
-            "nullable": false
-          },
-          "senderName": {
-            "type": "string",
-            "nullable": false
-          },
           "text": {
             "type": "string",
             "nullable": false
@@ -87,8 +74,6 @@
           }
         },
         "required": [
-          "driverUid",
-          "senderName",
           "text",
           "createdAt"
         ]
