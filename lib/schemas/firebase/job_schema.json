@@ -1056,10 +1056,6 @@
             "type": "boolean",
             "nullable": true
           },
-          "viewedRecoveryReport": {
-            "type": "boolean",
-            "nullable": true
-          },
           "conditionReport": {
             "$ref": "#/components/schemas/RecoveryConditionReport",
             "nullable": true
