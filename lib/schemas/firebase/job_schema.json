@@ -1052,10 +1052,6 @@
       "DeliveryConditionReport": {
         "type": "object",
         "properties": {
-          "sameConditionAsRecovery": {
-            "type": "boolean",
-            "nullable": true
-          },
           "conditionReport": {
             "$ref": "#/components/schemas/RecoveryConditionReport",
             "nullable": true
