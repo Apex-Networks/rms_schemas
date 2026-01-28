@@ -95,6 +95,18 @@
           "docId"
         ]
       },
+      "ReadReceipt": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "string",
+            "nullable": false
+          }
+        },
+        "required": [
+          "messageId"
+        ]
+      },
       "MessageUpdates": {
         "type": "object",
         "properties": {
@@ -102,8 +114,8 @@
             "$ref": "#/components/schemas/OutgoingMessage",
             "nullable": true
           },
-          "readMessageId": {
-            "type": "string",
+          "readReceipt": {
+            "$ref": "#/components/schemas/ReadReceipt",
             "nullable": true
           }
         },
