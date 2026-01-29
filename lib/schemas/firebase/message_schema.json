@@ -112,7 +112,19 @@
             "$ref": "#/components/schemas/ReadReceipt",
             "nullable": true
           }
-        }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "outgoingMessage"
+            ]
+          },
+          {
+            "required": [
+              "readReceipt"
+            ]
+          }
+        ]
       }
     }
   }
