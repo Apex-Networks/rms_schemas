@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.11.0",
+    "version": "2.12.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -1052,14 +1052,6 @@
       "DeliveryConditionReport": {
         "type": "object",
         "properties": {
-          "sameConditionAsRecovery": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "viewedRecoveryReport": {
-            "type": "boolean",
-            "nullable": true
-          },
           "conditionReport": {
             "$ref": "#/components/schemas/RecoveryConditionReport",
             "nullable": true
