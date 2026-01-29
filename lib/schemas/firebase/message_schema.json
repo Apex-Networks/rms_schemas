@@ -61,12 +61,6 @@
             "type": "string",
             "nullable": false
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "x-firestore-type": "timestamp",
-            "nullable": false
-          },
           "jobInfo": {
             "$ref": "#/components/schemas/JobInfo",
             "nullable": true,
@@ -74,8 +68,7 @@
           }
         },
         "required": [
-          "text",
-          "createdAt"
+          "text"
         ]
       },
       "JobInfo": {
@@ -98,13 +91,13 @@
       "ReadReceipt": {
         "type": "object",
         "properties": {
-          "messageId": {
+          "docId": {
             "type": "string",
             "nullable": false
           }
         },
         "required": [
-          "messageId"
+          "docId"
         ]
       },
       "UserMessages": {
