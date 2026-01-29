@@ -103,14 +103,13 @@
       },
       "UserMessages": {
         "type": "object",
+        "description": "Either an outgoing message or a read receipt",
         "properties": {
           "outgoingMessage": {
-            "$ref": "#/components/schemas/OutgoingMessage",
-            "nullable": true
+            "$ref": "#/components/schemas/OutgoingMessage"
           },
           "readReceipt": {
-            "$ref": "#/components/schemas/ReadReceipt",
-            "nullable": true
+            "$ref": "#/components/schemas/ReadReceipt"
           }
         },
         "oneOf": [
