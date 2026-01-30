@@ -29,7 +29,7 @@
             "nullable": true
           },
           "jobsFeature": {
-            "$ref": "#/components/schemas/UserJobUpdates",
+            "$ref": "#/components/schemas/UserJobInteractions",
             "nullable": true
           },
           "activitiesFeature": {
@@ -260,8 +260,9 @@
             "x-mapped-to": "JobVVRFAccountId",
             "nullable": true
           },
-          "userJobUpdates": {
-            "$ref": "#/components/schemas/UserJobUpdates",
+          "userJobInteractions": {
+            "$ref": "#/components/schemas/UserJobInteractions",
+            "description": "User interactions with this job",
             "nullable": true
           }
         },
@@ -329,7 +330,7 @@
           "van"
         ]
       },
-      "UserJobUpdates": {
+      "UserJobInteractions": {
         "type": "object",
         "properties": {
           "docId": {
