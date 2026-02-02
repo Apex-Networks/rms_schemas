@@ -15,8 +15,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FaultCode"
-            },
-            "nullable": false
+            }
           }
         },
         "required": [
@@ -27,16 +26,13 @@
         "type": "object",
         "properties": {
           "code": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "category": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [
