@@ -49,8 +49,8 @@
             "properties": {}
           },
           "messagesFeature": {
-            "x-model-name": "UserMessages",
-            "$ref": "./message_schema.json#/components/schemas/UserMessages",
+            "x-model-name": "OutgoingMessage",
+            "$ref": "./message_schema.json#/components/schemas/OutgoingMessage",
             "nullable": true
           },
           "formsFeature": {
