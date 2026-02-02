@@ -49,7 +49,6 @@
             "properties": {}
           },
           "messagesFeature": {
-            "x-model-name": "OutgoingMessage",
             "$ref": "./message_schema.json#/components/schemas/OutgoingMessage",
             "nullable": true
           },
