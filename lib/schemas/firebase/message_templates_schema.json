@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Templates Schema",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Schema for message templates data"
   },
   "paths": {},
@@ -13,7 +13,6 @@
         "properties": {
           "items": {
             "type": "array",
-            "nullable": false,
             "items": {
               "$ref": "#/components/schemas/MessageTemplate"
             }
@@ -27,12 +26,10 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "text": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [

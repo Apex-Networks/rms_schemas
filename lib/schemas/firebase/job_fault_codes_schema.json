@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Fault Codes Schema",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Schema for fault codes used in job reporting"
   },
   "paths": {},
@@ -15,8 +15,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FaultCode"
-            },
-            "nullable": false
+            }
           }
         },
         "required": [
@@ -27,16 +26,13 @@
         "type": "object",
         "properties": {
           "code": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "category": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [

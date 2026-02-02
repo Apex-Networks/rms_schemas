@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Acceptance Statements Schema",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Schema for acceptance statements lookup data"
   },
   "paths": {},
@@ -15,8 +15,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AcceptanceStatement"
-            },
-            "nullable": false
+            }
           }
         },
         "required": [
@@ -27,12 +26,10 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "statement": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [

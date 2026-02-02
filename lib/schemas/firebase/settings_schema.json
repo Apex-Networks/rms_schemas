@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Settings Schema",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Firebase Firestore schema for RMS driver app settings and data."
   },
   "paths": {},
@@ -13,7 +13,6 @@
         "properties": {
           "rmsSchemaVersion": {
             "type": "string",
-            "nullable": false,
             "description": "The rms_schemas repository tag / version",
             "example": "x.y.z"
           },
@@ -27,43 +26,34 @@
             "description": "Client-only field. Backend must not modify."
           },
           "completedRecordsExpiryDays": {
-            "type": "integer",
-            "nullable": false
+            "type": "integer"
           },
           "redeployedJobsNotified": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "inventoryCheck": {
             "$ref": "#/components/schemas/InventoryCheck"
           },
           "jobRiskAssessmentRequired": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "driverTimeChangesRestricted": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "mileageAndOutcomeRequired": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "conditionReportsRequired": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "mediaUploadWifiOnly": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "gpsEnabled": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "addJobPartsAllowed": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "fuelEntryMode": {
             "$ref": "#/components/schemas/FuelEntryMode"
@@ -109,12 +99,10 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "type": "boolean",
-            "nullable": false
+            "type": "boolean"
           },
           "expiryDays": {
-            "type": "integer",
-            "nullable": false
+            "type": "integer"
           }
         },
         "required": [
