@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Items Present Schema",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Schema for items present lookup data"
   },
   "paths": {},
