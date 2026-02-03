@@ -43,6 +43,11 @@
             "$ref": "#/components/schemas/Job",
             "nullable": true,
             "description": "General messages are not linked to any job"
+          },
+          "userMessageInteractions": {
+            "$ref": "#/components/schemas/UserMessageInteractions",
+            "nullable": true,
+            "description": "User interactions with this message"
           }
         },
         "required": [
