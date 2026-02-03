@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.14.0",
+    "version": "2.15.0",
     "description": "Schema for job data"
   },
   "paths": {},
