@@ -101,7 +101,7 @@
           "docId"
         ]
       },
-      "UserMessages": {
+      "UserMessageInteractions": {
         "type": "object",
         "properties": {
           "outgoingMessage": {
