@@ -852,7 +852,7 @@
           }
         }
       },
-      "RoadsideConditionReport": {
+      "RoadsideStatementsSection": {
         "type": "object",
         "properties": {
           "acceptanceStatementIds": {
@@ -861,17 +861,53 @@
               "type": "string"
             },
             "nullable": true
-          },
+          }
+        }
+      },
+      "RoadsideCommentsSection": {
+        "type": "object",
+        "properties": {
           "comments": {
             "type": "string",
             "nullable": true
-          },
-          "customerConfirmation": {
+          }
+        }
+      },
+      "RoadsideCustomerConfirmationSection": {
+        "type": "object",
+        "properties": {
+          "signature": {
             "$ref": "#/components/schemas/ConditionSignature",
             "nullable": true
-          },
+          }
+        }
+      },
+      "RoadsideEmailConfirmationSection": {
+        "type": "object",
+        "properties": {
           "email": {
             "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RoadsideConditionReport": {
+        "type": "object",
+        "properties": {
+          "statements": {
+            "$ref": "#/components/schemas/RoadsideStatementsSection",
+            "nullable": true
+          },
+          "comments": {
+            "$ref": "#/components/schemas/RoadsideCommentsSection",
+            "nullable": true
+          },
+          "customerConfirmation": {
+            "$ref": "#/components/schemas/RoadsideCustomerConfirmationSection",
+            "nullable": true
+          },
+          "emailConfirmation": {
+            "$ref": "#/components/schemas/RoadsideEmailConfirmationSection",
             "nullable": true
           }
         }
@@ -940,7 +976,7 @@
           "points"
         ]
       },
-      "RecoveryConditionReport": {
+      "RecoveryWeatherVehicleSection": {
         "type": "object",
         "properties": {
           "vehicleClean": {
@@ -974,14 +1010,24 @@
           "weatherFog": {
             "type": "boolean",
             "nullable": true
-          },
+          }
+        }
+      },
+      "RecoveryItemsPresentSection": {
+        "type": "object",
+        "properties": {
           "itemsPresentIds": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "nullable": true
-          },
+          }
+        }
+      },
+      "RecoveryDetailsSection": {
+        "type": "object",
+        "properties": {
           "liftType": {
             "$ref": "#/components/schemas/RecoveryLiftType",
             "nullable": true
@@ -1009,7 +1055,12 @@
           "numberOfWheelsOnGround": {
             "type": "boolean",
             "nullable": true
-          },
+          }
+        }
+      },
+      "RecoveryVehicleConditionSection": {
+        "type": "object",
+        "properties": {
           "vehicleType": {
             "type": "string",
             "nullable": true
@@ -1028,7 +1079,12 @@
           "damageImageBase64": {
             "type": "string",
             "nullable": true
-          },
+          }
+        }
+      },
+      "RecoveryOtherInformationSection": {
+        "type": "object",
+        "properties": {
           "unattendedDeliveryAuthority": {
             "type": "boolean",
             "nullable": true
@@ -1040,13 +1096,83 @@
           "otherComments": {
             "type": "string",
             "nullable": true
-          },
-          "customerConfirmation": {
+          }
+        }
+      },
+      "RecoveryCustomerConfirmationSection": {
+        "type": "object",
+        "properties": {
+          "signature": {
             "$ref": "#/components/schemas/ConditionSignature",
             "nullable": true
-          },
+          }
+        }
+      },
+      "RecoveryEmailConfirmationSection": {
+        "type": "object",
+        "properties": {
           "email": {
             "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DeliveryConditionSection": {
+        "type": "object",
+        "properties": {
+          "conditionReport": {
+            "$ref": "#/components/schemas/RecoveryConditionReport",
+            "nullable": true
+          }
+        }
+      },
+      "DeliveryCustomerConfirmationSection": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "$ref": "#/components/schemas/ConditionSignature",
+            "nullable": true
+          }
+        }
+      },
+      "DeliveryEmailConfirmationSection": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RecoveryConditionReport": {
+        "type": "object",
+        "properties": {
+          "weatherVehicle": {
+            "$ref": "#/components/schemas/RecoveryWeatherVehicleSection",
+            "nullable": true
+          },
+          "itemsPresent": {
+            "$ref": "#/components/schemas/RecoveryItemsPresentSection",
+            "nullable": true
+          },
+          "recoveryDetails": {
+            "$ref": "#/components/schemas/RecoveryDetailsSection",
+            "nullable": true
+          },
+          "vehicleCondition": {
+            "$ref": "#/components/schemas/RecoveryVehicleConditionSection",
+            "nullable": true
+          },
+          "otherInformation": {
+            "$ref": "#/components/schemas/RecoveryOtherInformationSection",
+            "nullable": true
+          },
+          "customerConfirmation": {
+            "$ref": "#/components/schemas/RecoveryCustomerConfirmationSection",
+            "nullable": true
+          },
+          "emailConfirmation": {
+            "$ref": "#/components/schemas/RecoveryEmailConfirmationSection",
             "nullable": true
           }
         }
@@ -1054,16 +1180,16 @@
       "DeliveryConditionReport": {
         "type": "object",
         "properties": {
-          "conditionReport": {
-            "$ref": "#/components/schemas/RecoveryConditionReport",
+          "condition": {
+            "$ref": "#/components/schemas/DeliveryConditionSection",
             "nullable": true
           },
           "customerConfirmation": {
-            "$ref": "#/components/schemas/ConditionSignature",
+            "$ref": "#/components/schemas/DeliveryCustomerConfirmationSection",
             "nullable": true
           },
-          "email": {
-            "type": "string",
+          "emailConfirmation": {
+            "$ref": "#/components/schemas/DeliveryEmailConfirmationSection",
             "nullable": true
           }
         }
