@@ -64,7 +64,7 @@
           "job": {
             "$ref": "#/components/schemas/Job",
             "nullable": true,
-            "description": "General messages are not linked to any job"
+            "description": "Message that is linked to a job"
           }
         },
         "required": [
