@@ -103,6 +103,7 @@
       },
       "UserMessageInteractions": {
         "type": "object",
+        "description": "User interactions with this message",
         "properties": {
           "outgoingMessage": {
             "$ref": "#/components/schemas/OutgoingMessage",
