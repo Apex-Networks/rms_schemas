@@ -50,7 +50,6 @@
             "properties": {}
           },
           "messagesFeature": {
-            "x-model-name": "UserMessageInteractions",
             "$ref": "./message_schema.json#/components/schemas/UserMessageInteractions",
             "nullable": true
           },
