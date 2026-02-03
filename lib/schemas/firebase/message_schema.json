@@ -121,13 +121,10 @@
           "isMarkedAsDeleted": {
             "type": "boolean",
             "default": false,
+            "nullable": true,
             "description": "Indicates if the message has been marked as deleted by the user"
           }
-        },
-        "required": [
-          "isMarkedAsDeleted"
-        ]
-
+        }
       }
     }
   }
