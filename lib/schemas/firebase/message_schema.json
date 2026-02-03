@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Schema",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Schema for message data"
   },
   "paths": {},
@@ -120,7 +120,7 @@
           },
           "isMarkedAsDeleted": {
             "type": "boolean",
-                        "default": false,
+            "default": false,
             "description": "Indicates if the message has been marked as deleted by the user"
           }
         },
