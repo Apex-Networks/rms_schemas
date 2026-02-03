@@ -14,6 +14,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
+            "x-firestore-type": "timestamp",
             "nullable": true
           },
           "rmsSchemaVersion": {
@@ -400,7 +401,8 @@
           },
           "timestamp": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
           }
         },
         "required": [
