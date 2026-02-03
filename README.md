@@ -23,6 +23,12 @@ A Dart package containing OpenAPI schema definitions for RMS data structures.
 
 This repository provides OpenAPI schema definitions for RMS (Recovery Management System) data structures. These schemas define the structure, validation rules, and data types for all RMS system components, ensuring consistent data contracts across mobile apps, backend services, and integrations.
 
+## Schema Extensions
+
+### Firebase Type Specification
+
+While OpenAPI specifications are implementation agnostic by design, certain schema properties require specific Firebase types. These are marked with the `x-firestore-type` extension, whose value indicates which Firestore type to use (e.g., `timestamp`, `geopoint`).
+
 ## Schemas Included
 
 ### Authentication Schemas

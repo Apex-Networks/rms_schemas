@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Schema",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Schema for message data"
   },
   "paths": {},
@@ -39,10 +39,15 @@
             "x-firestore-type": "timestamp",
             "nullable": false
           },
-          "jobInfo": {
-            "$ref": "#/components/schemas/JobInfo",
+          "job": {
+            "$ref": "#/components/schemas/Job",
             "nullable": true,
-            "description": "General messages are not linked to any job"
+            "description": "Linked job"
+          },
+          "userMessageInteractions": {
+            "$ref": "#/components/schemas/UserMessageInteractions",
+            "nullable": true,
+            "description": "User interactions with this message"
           }
         },
         "required": [
@@ -57,43 +62,21 @@
       "OutgoingMessage": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true,
-            "description": "Backend ID linking replies"
-          },
-          "driverUid": {
-            "type": "string",
-            "nullable": false
-          },
-          "senderName": {
-            "type": "string",
-            "nullable": false
-          },
           "text": {
             "type": "string",
             "nullable": false
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "x-firestore-type": "timestamp",
-            "nullable": false
-          },
-          "jobInfo": {
-            "$ref": "#/components/schemas/JobInfo",
+          "job": {
+            "$ref": "#/components/schemas/Job",
             "nullable": true,
-            "description": "General messages are not linked to any job"
+            "description": "Linked job"
           }
         },
         "required": [
-          "driverUid",
-          "senderName",
-          "text",
-          "createdAt"
+          "text"
         ]
       },
-      "JobInfo": {
+      "Job": {
         "type": "object",
         "properties": {
           "id": {
@@ -109,6 +92,39 @@
           "id",
           "docId"
         ]
+      },
+      "ReadReceipt": {
+        "type": "object",
+        "properties": {
+          "docId": {
+            "type": "string",
+            "nullable": false,
+            "description": "The unique document id for the message being marked as read in Firebase Firestore"
+          }
+        },
+        "required": [
+          "docId"
+        ]
+      },
+      "UserMessageInteractions": {
+        "type": "object",
+        "description": "User interactions with this message",
+        "properties": {
+          "outgoingMessage": {
+            "$ref": "#/components/schemas/OutgoingMessage",
+            "nullable": true
+          },
+          "readReceipt": {
+            "$ref": "#/components/schemas/ReadReceipt",
+            "nullable": true
+          },
+          "isMarkedAsDeleted": {
+            "type": "boolean",
+            "nullable": true,
+            "default": false,
+            "description": "Indicates if the message has been marked as deleted by the user"
+          }
+        }
       }
     }
   }

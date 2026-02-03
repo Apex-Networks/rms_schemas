@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.13.1",
+    "version": "2.14.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -14,6 +14,7 @@
           "timestamp": {
             "type": "string",
             "format": "date-time",
+            "x-firestore-type": "timestamp",
             "nullable": true
           },
           "rmsSchemaVersion": {
@@ -49,7 +50,7 @@
             "properties": {}
           },
           "messagesFeature": {
-            "$ref": "./message_schema.json#/components/schemas/OutgoingMessage",
+            "$ref": "./message_schema.json#/components/schemas/UserMessageInteractions",
             "nullable": true
           },
           "formsFeature": {
@@ -399,7 +400,8 @@
           },
           "timestamp": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
           }
         },
         "required": [
