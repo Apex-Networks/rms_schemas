@@ -50,8 +50,9 @@
             "properties": {}
           },
           "messagesFeature": {
-            "$ref": "./message_schema.json#/components/schemas/UserMessageInteractions",
-            "nullable": true
+            "description": "Use UserMessageInteractions (message_schema.json)",
+            "type": "object",
+            "properties": {}
           },
           "formsFeature": {
             "type": "object",
