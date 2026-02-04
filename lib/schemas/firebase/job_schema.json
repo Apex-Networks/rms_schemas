@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "2.15.0",
+    "version": "3.0.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -141,7 +141,7 @@
             "format": "date-time",
             "x-firestore-type": "timestamp",
             "x-mapped-to": "JobDateTime",
-            "nullable": false
+            "nullable": true
           },
           "destination": {
             "$ref": "#/components/schemas/Destination",
@@ -212,7 +212,7 @@
           "orderNumber": {
             "type": "string",
             "x-mapped-to": "JobOrderNumber",
-            "nullable": false
+            "nullable": true
           },
           "owner": {
             "$ref": "#/components/schemas/Owner",
@@ -268,14 +268,11 @@
           }
         },
         "required": [
-          "agentCode",
           "areImagesRequired",
-          "dateTime",
           "docId",
           "driverUid",
           "isCancelled",
           "isRedeployable",
-          "orderNumber",
           "service",
           "rmsSchemaVersion"
         ]
@@ -754,7 +751,8 @@
           },
           "fuelType": {
             "$ref": "#/components/schemas/VehicleFuelTypeValues",
-            "nullable": true
+            "nullable": false,
+            "default": "other"
           },
           "grossWeight": {
             "type": "string",
@@ -765,7 +763,8 @@
           "hasTrailer": {
             "type": "boolean",
             "x-mapped-to": "JobVehicleHasTrailer",
-            "nullable": true
+            "nullable": false,
+            "default": false
           },
           "height": {
             "type": "string",
@@ -815,7 +814,8 @@
           },
           "transmissionType": {
             "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
-            "nullable": true
+            "nullable": false,
+            "default": "unknown"
           },
           "vin": {
             "type": "string",
