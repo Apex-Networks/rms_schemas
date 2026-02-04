@@ -80,8 +80,7 @@
           "agentCode": {
             "type": "string",
             "x-mapped-to": "JobContractCode",
-            "nullable": false,
-            "default": ""
+            "nullable": true
           },
           "ansNotes": {
             "type": "string",
@@ -269,7 +268,6 @@
           }
         },
         "required": [
-          "agentCode",
           "areImagesRequired",
           "docId",
           "driverUid",
