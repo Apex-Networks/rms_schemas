@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "4.0.0",
+    "version": "5.0.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -50,8 +50,9 @@
             "properties": {}
           },
           "messagesFeature": {
-            "$ref": "./message_schema.json#/components/schemas/UserMessageInteractions",
-            "nullable": true
+            "description": "Use UserMessageInteractions (message_schema.json)",
+            "type": "object",
+            "properties": {}
           },
           "formsFeature": {
             "type": "object",
