@@ -36,7 +36,8 @@
           "expireAt": {
             "type": "string",
             "format": "date-time",
-            "x-firestore-type": "timestamp"
+            "x-firestore-type": "timestamp",
+            "description": "Firestore TTL timestamp for automatic expiry"
           },
           "job": {
             "$ref": "#/components/schemas/Job",
