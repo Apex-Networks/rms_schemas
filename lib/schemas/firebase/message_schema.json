@@ -13,31 +13,25 @@
         "properties": {
           "id": {
             "type": "string",
-            "nullable": false,
             "description": "Backend ID linking replies"
           },
           "docId": {
             "type": "string",
-            "description": "The unique document id for this message in Firebase Firestore",
-            "nullable": false
+            "description": "The unique document id for this message in Firebase Firestore"
           },
           "driverUid": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "senderName": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "text": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
-            "x-firestore-type": "timestamp",
-            "nullable": false
+            "x-firestore-type": "timestamp"
           },
           "job": {
             "$ref": "#/components/schemas/Job",
@@ -63,8 +57,7 @@
         "type": "object",
         "properties": {
           "text": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "job": {
             "$ref": "#/components/schemas/Job",
@@ -80,12 +73,10 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "docId": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [
@@ -98,7 +89,6 @@
         "properties": {
           "docId": {
             "type": "string",
-            "nullable": false,
             "description": "The unique document id for the message being marked as read in Firebase Firestore"
           }
         },

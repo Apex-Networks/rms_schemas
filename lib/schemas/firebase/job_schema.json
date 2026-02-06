@@ -69,7 +69,6 @@
         "properties": {
           "rmsSchemaVersion": {
             "type": "string",
-            "nullable": false,
             "description": "The rms_schemas repository tag / version",
             "example": "x.y.z"
           },
@@ -91,8 +90,7 @@
           },
           "areImagesRequired": {
             "type": "boolean",
-            "x-mapped-to": "JobAreImagesRequired",
-            "nullable": false
+            "x-mapped-to": "JobAreImagesRequired"
           },
           "authorisedMiles": {
             "type": "integer",
@@ -151,15 +149,13 @@
           "docId": {
             "type": "string",
             "x-mapped-to": "NEW",
-            "description": "The unique document id for this job in Firebase Firestore",
-            "nullable": false
+            "description": "The unique document id for this job in Firebase Firestore"
           },
           "driverUid": {
             "type": "string",
             "x-mapped-to": "NEW",
             "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
-            "example": "000001-3",
-            "nullable": false
+            "example": "000001-3"
           },
           "eta": {
             "type": "string",
@@ -187,8 +183,7 @@
           },
           "isCancelled": {
             "type": "boolean",
-            "x-mapped-to": "NEW",
-            "nullable": false
+            "x-mapped-to": "NEW"
           },
           "isFaultOutcomeAnsStandard": {
             "type": "boolean",
@@ -197,8 +192,7 @@
           },
           "isRedeployable": {
             "type": "boolean",
-            "x-mapped-to": "NEW",
-            "nullable": false
+            "x-mapped-to": "NEW"
           },
           "location": {
             "$ref": "#/components/schemas/Location",
@@ -469,20 +463,16 @@
         "type": "object",
         "properties": {
           "traffic": {
-            "$ref": "#/components/schemas/RiskLevelValues",
-            "nullable": false
+            "$ref": "#/components/schemas/RiskLevelValues"
           },
           "location": {
-            "$ref": "#/components/schemas/RiskLevelValues",
-            "nullable": false
+            "$ref": "#/components/schemas/RiskLevelValues"
           },
           "vehicle": {
-            "$ref": "#/components/schemas/RiskLevelValues",
-            "nullable": false
+            "$ref": "#/components/schemas/RiskLevelValues"
           },
           "passenger": {
-            "$ref": "#/components/schemas/RiskLevelValues",
-            "nullable": false
+            "$ref": "#/components/schemas/RiskLevelValues"
           }
         },
         "required": [
@@ -504,8 +494,7 @@
         "type": "object",
         "properties": {
           "code": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [
@@ -516,8 +505,7 @@
         "type": "object",
         "properties": {
           "code": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "notes": {
             "type": "string",
@@ -597,8 +585,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "nullable": false
+            "type": "integer"
           }
         },
         "required": [
@@ -752,7 +739,6 @@
           },
           "fuelType": {
             "$ref": "#/components/schemas/VehicleFuelTypeValues",
-            "nullable": false,
             "default": "other"
           },
           "grossWeight": {
@@ -764,7 +750,6 @@
           "hasTrailer": {
             "type": "boolean",
             "x-mapped-to": "JobVehicleHasTrailer",
-            "nullable": false,
             "default": false
           },
           "height": {
@@ -815,7 +800,6 @@
           },
           "transmissionType": {
             "$ref": "#/components/schemas/VehicleTransmissionTypeValues",
-            "nullable": false,
             "default": "unknown"
           },
           "vin": {
