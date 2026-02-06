@@ -33,6 +33,11 @@
             "format": "date-time",
             "x-firestore-type": "timestamp"
           },
+          "expireAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          },
           "job": {
             "$ref": "#/components/schemas/Job",
             "nullable": true,
@@ -50,7 +55,8 @@
           "driverUid",
           "senderName",
           "text",
-          "createdAt"
+          "createdAt",
+          "expireAt"
         ]
       },
       "OutgoingMessage": {

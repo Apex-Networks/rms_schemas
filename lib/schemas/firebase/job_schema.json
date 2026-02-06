@@ -165,6 +165,13 @@
             "description": "Expected time of arrival as set by the driver when accepting the job",
             "nullable": true
           },
+          "expireAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp",
+            "x-mapped-to": "NEW",
+            "description": "Firestore TTL timestamp for automatic expiry"
+          },
           "incomingEventType": {
             "$ref": "#/components/schemas/IncomingEventTypeValues",
             "nullable": true
@@ -268,6 +275,7 @@
           "driverUid",
           "isCancelled",
           "isRedeployable",
+          "expireAt",
           "service",
           "rmsSchemaVersion"
         ]
