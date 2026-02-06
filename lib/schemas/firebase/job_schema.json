@@ -8,7 +8,7 @@
   "paths": {},
   "components": {
     "schemas": {
-      "Deltas": {
+      "Outgoing": {
         "type": "object",
         "properties": {
           "timestamp": {
