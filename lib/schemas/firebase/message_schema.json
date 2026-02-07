@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Schema",
-    "version": "1.1.0",
+    "version": "2.0.0",
     "description": "Schema for message data"
   },
   "paths": {},
@@ -13,31 +13,31 @@
         "properties": {
           "id": {
             "type": "string",
-            "nullable": false,
             "description": "Backend ID linking replies"
           },
           "docId": {
             "type": "string",
-            "description": "The unique document id for this message in Firebase Firestore",
-            "nullable": false
+            "description": "The unique document id for this message in Firebase Firestore"
           },
           "driverUid": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "senderName": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "text": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
+            "x-firestore-type": "timestamp"
+          },
+          "expireAt": {
+            "type": "string",
+            "format": "date-time",
             "x-firestore-type": "timestamp",
-            "nullable": false
+            "description": "Firestore TTL timestamp for automatic expiry"
           },
           "job": {
             "$ref": "#/components/schemas/Job",
@@ -56,15 +56,15 @@
           "driverUid",
           "senderName",
           "text",
-          "createdAt"
+          "createdAt",
+          "expireAt"
         ]
       },
       "OutgoingMessage": {
         "type": "object",
         "properties": {
           "text": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "job": {
             "$ref": "#/components/schemas/Job",
@@ -80,12 +80,10 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           },
           "docId": {
-            "type": "string",
-            "nullable": false
+            "type": "string"
           }
         },
         "required": [
@@ -98,7 +96,6 @@
         "properties": {
           "docId": {
             "type": "string",
-            "nullable": false,
             "description": "The unique document id for the message being marked as read in Firebase Firestore"
           }
         },

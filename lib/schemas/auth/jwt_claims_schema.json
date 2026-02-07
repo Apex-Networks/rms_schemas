@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "JWT Claims",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Use this schema when sending JWT Claims data from the backend to the app"
   },
   "paths": {},
@@ -14,54 +14,45 @@
           "driverId": {
             "type": "integer",
             "description": "Unique identifier for the driver",
-            "nullable": false,
             "example": 3
           },
           "driverUid": {
             "type": "string",
             "description": "Driver's unique identifier i.e. <installation-code>-<user-uid>",
-            "example": "000001-3",
-            "nullable": false
+            "example": "000001-3"
           },
           "driverName": {
             "type": "string",
             "description": "Driver's display name",
-            "nullable": false,
             "example": "Sandra Evans"
           },
           "installationCode": {
             "type": "string",
             "description": "Installation code for the driver's setup",
-            "nullable": false,
             "example": "000001"
           },
           "login": {
             "type": "string",
             "description": "Driver's login identifier",
-            "nullable": false,
             "example": "000001-sandra@test.com"
           },
           "driverAccessToken": {
             "type": "string",
             "description": "Access token for driver authentication",
-            "nullable": false,
             "example": "b5f9824e20c1cfe9846d24ef2623574efb4a0ba210aa43e2ff4ab9e5bd40f372"
           },
           "appVariant": {
             "type": "string",
             "description": "Application variant - rms, rmsLitePlus, rmsLite",
-            "nullable": false,
             "enum": ["rms", "rmsLitePlus", "rmsLite"]
           },
           "settingsEditable": {
             "type": "boolean",
-            "description": "Indicates if settings are editable",
-            "nullable": false
+            "description": "Indicates if settings are editable"
           },
           "user_id": {
             "type": "string",
-            "description": "User ID from the JWT claims",
-            "nullable": false
+            "description": "User ID from the JWT claims"
           }
         },
         "required": [
