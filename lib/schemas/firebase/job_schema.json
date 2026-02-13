@@ -389,6 +389,12 @@
           "vehicleCheck": {
             "type": "boolean",
             "nullable": true
+          },
+          "isMarkedAsDeleted": {
+            "type": "boolean",
+            "nullable": true,
+            "default": false,
+            "description": "Indicates if the job has been marked as deleted by the user"
           }
         }
       },
