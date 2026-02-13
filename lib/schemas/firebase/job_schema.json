@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "7.0.0",
+    "version": "7.1.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -389,6 +389,12 @@
           "vehicleCheck": {
             "type": "boolean",
             "nullable": true
+          },
+          "isMarkedAsDeleted": {
+            "type": "boolean",
+            "nullable": true,
+            "default": false,
+            "description": "Indicates if the job has been marked as deleted by the user"
           }
         }
       },
