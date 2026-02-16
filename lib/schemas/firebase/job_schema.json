@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "7.1.0",
+    "version": "8.0.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -337,6 +337,14 @@
           "docId": {
             "type": "string",
             "description": "The unique document id for this job in Firebase Firestore",
+            "nullable": true
+          },
+          "jobId": {
+            "type": "string",
+            "nullable": true
+          },
+          "service": {
+            "$ref": "#/components/schemas/Service",
             "nullable": true
           },
           "jobAcceptance": {
