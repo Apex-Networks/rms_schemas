@@ -339,6 +339,14 @@
             "description": "The unique document id for this job in Firebase Firestore",
             "nullable": true
           },
+          "jobId": {
+            "type": "string",
+            "nullable": true
+          },
+          "service": {
+            "$ref": "#/components/schemas/Service",
+            "nullable": true
+          },
           "jobAcceptance": {
             "$ref": "#/components/schemas/Acceptance",
             "nullable": true
