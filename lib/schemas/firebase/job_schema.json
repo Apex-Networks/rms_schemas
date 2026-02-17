@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "8.0.0",
+    "version": "8.1.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -11,6 +11,11 @@
       "Outgoing": {
         "type": "object",
         "properties": {
+          "sizeInBytes": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Approximate size of the outgoing payload in bytes"
+          },
           "timestamp": {
             "type": "string",
             "format": "date-time",
