@@ -11,6 +11,11 @@
       "Outgoing": {
         "type": "object",
         "properties": {
+          "sizeInBytes": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Approximate size of the outgoing payload in bytes"
+          },
           "timestamp": {
             "type": "string",
             "format": "date-time",
