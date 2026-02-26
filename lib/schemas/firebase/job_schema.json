@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "8.1.0",
+    "version": "8.2.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -403,6 +403,13 @@
             "type": "boolean",
             "nullable": true
           },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Media"
+            },
+            "nullable": true
+          },
           "isMarkedAsDeleted": {
             "type": "boolean",
             "nullable": true,
@@ -439,6 +446,39 @@
           "clearScene",
           "complete",
           "cancelled"
+        ]
+      },
+      "MediaTypeValues": {
+        "type": "string",
+        "enum": [
+          "image",
+          "video"
+        ]
+      },
+      "Media": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/MediaTypeValues"
+          },
+          "capturedAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          }
+        },
+        "required": [
+          "url",
+          "filename",
+          "type",
+          "capturedAt"
         ]
       },
       "RejectionReasonValues": {
