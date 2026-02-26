@@ -406,30 +406,7 @@
           "media": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "url": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "filename": {
-                  "type": "string"
-                },
-                "type": {
-                  "$ref": "#/components/schemas/MediaTypeValues"
-                },
-                "capturedAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "x-firestore-type": "timestamp"
-                }
-              },
-              "required": [
-                "url",
-                "filename",
-                "type",
-                "capturedAt"
-              ]
+              "$ref": "#/components/schemas/Media"
             },
             "nullable": true
           },
@@ -476,6 +453,32 @@
         "enum": [
           "image",
           "video"
+        ]
+      },
+      "Media": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/MediaTypeValues"
+          },
+          "capturedAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          }
+        },
+        "required": [
+          "url",
+          "filename",
+          "type",
+          "capturedAt"
         ]
       },
       "RejectionReasonValues": {
