@@ -406,7 +406,30 @@
           "media": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "filename": {
+                  "type": "string"
+                },
+                "type": {
+                  "$ref": "#/components/schemas/MediaTypeValues"
+                },
+                "capturedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "x-firestore-type": "timestamp"
+                }
+              },
+              "required": [
+                "url",
+                "filename",
+                "type",
+                "capturedAt"
+              ]
             },
             "nullable": true
           },
@@ -446,6 +469,13 @@
           "clearScene",
           "complete",
           "cancelled"
+        ]
+      },
+      "MediaTypeValues": {
+        "type": "string",
+        "enum": [
+          "image",
+          "video"
         ]
       },
       "RejectionReasonValues": {
