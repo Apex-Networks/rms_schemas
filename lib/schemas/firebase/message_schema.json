@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Message Schema",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Schema for message data"
   },
   "paths": {},
@@ -11,6 +11,11 @@
       "IncomingMessage": {
         "type": "object",
         "properties": {
+          "rmsSchemaVersion": {
+            "type": "string",
+            "description": "The rms_schemas repository tag / version",
+            "example": "x.y.z"
+          },
           "id": {
             "type": "string",
             "description": "Backend ID linking replies"
@@ -51,6 +56,7 @@
           }
         },
         "required": [
+          "rmsSchemaVersion",
           "id",
           "docId",
           "driverUid",
