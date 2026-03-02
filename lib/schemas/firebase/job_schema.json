@@ -68,9 +68,9 @@
             "properties": {}
           },
           "loggingFeature": {
-            "description": "Use UserLoggingInteractions (logging_schema.json)",
-            "type": "object",
-            "additionalProperties": true
+            "$ref": "#/components/schemas/Media",
+            "nullable": true,
+            "description": "Shared media payload for uploaded logs. loggingFeature.type must be 'log'."
           }
         }
       },
@@ -457,7 +457,8 @@
         "type": "string",
         "enum": [
           "image",
-          "video"
+          "video",
+          "log"
         ]
       },
       "Media": {
