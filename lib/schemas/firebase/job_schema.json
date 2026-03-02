@@ -69,8 +69,7 @@
           },
           "loggingFeature": {
             "$ref": "#/components/schemas/Media",
-            "nullable": true,
-            "description": "Shared media payload for uploaded logs. loggingFeature.type must be 'log'."
+            "nullable": true
           }
         }
       },
