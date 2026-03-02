@@ -4,19 +4,18 @@ A Dart package containing OpenAPI schema definitions for RMS data structures.
 
 ## 📖 Interactive Documentation
 
-| Category              | Schema                    | View                                                                                                                                                                           |
-|-----------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Authentication**    | Authentication Schema     | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json)                |
-|                       | JWT Claims Schema         | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json)                    |
-| **Job**               | Job Schema                | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json)                       |
-| **Logging**           | Logging Schema            | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/logging_schema.json)                   |
-| **Lookups**           | Job Acceptance Statements | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_acceptance_statements_schema.json) |
-|                       | Job Fault Codes           | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_fault_codes_schema.json)           |
-|                       | Job Items Present         | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_items_present_schema.json)         |
-|                       | Job Outcome Codes         | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_outcome_codes_schema.json)         |
-| **Messages**          | Messages Schema           | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_schema.json)                   |
-| **Settings**          | Settings Schema           | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json)                  |
-| **Message Templates** | Message Templates Schema  | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_templates_schema.json)         |
+| Category | Schema | View |
+|----------|--------|------|
+| **Authentication** | Authentication Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/authentication_schema.json) |
+| | JWT Claims Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/auth/jwt_claims_schema.json) |
+| **Job** | Job Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_schema.json) |
+| **Lookups** | Job Acceptance Statements | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_acceptance_statements_schema.json) |
+| | Job Fault Codes | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_fault_codes_schema.json) |
+| | Job Items Present | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_items_present_schema.json) |
+| | Job Outcome Codes | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/job_outcome_codes_schema.json) |
+| **Settings** | Settings Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/settings_schema.json) |
+| **Messages** | Messages Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_schema.json) |
+| | Message Templates Schema | [→ View](https://elements-demo.stoplight.io/?spec=https://raw.githubusercontent.com/Apex-Networks/rms_schemas/main/lib/schemas/firebase/message_templates_schema.json) |
 
 > 💡 Click any link above for clean, interactive schema visualization
 
@@ -44,10 +43,9 @@ While OpenAPI specifications are implementation agnostic by design, certain sche
 - **Job Fault Codes** (`lib/schemas/firebase/job_fault_codes_schema.json`)
 - **Job Items Present** (`lib/schemas/firebase/job_items_present_schema.json`)
 - **Job Outcome Codes** (`lib/schemas/firebase/job_outcome_codes_schema.json`)
-- **Logging Schema** (`lib/schemas/firebase/logging_schema.json`)
+- **Settings** (`lib/schemas/firebase/settings_schema.json`)
 - **Message Schema** (`lib/schemas/firebase/message_schema.json`)
 - **Message Templates Schema** (`lib/schemas/firebase/message_templates_schema.json`)
-- **Settings** (`lib/schemas/firebase/settings_schema.json`)
 
 ## Installation
 
