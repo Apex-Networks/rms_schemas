@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Jobs Schema",
-    "version": "8.2.0",
+    "version": "8.3.0",
     "description": "Schema for job data"
   },
   "paths": {},
@@ -66,6 +66,11 @@
           "redFlashingLightFeature": {
             "type": "object",
             "properties": {}
+          },
+          "loggingFeature": {
+            "description": "Use UserLoggingInteractions (logging_schema.json)",
+            "type": "object",
+            "additionalProperties": true
           }
         }
       },
