@@ -457,8 +457,7 @@
         "type": "string",
         "enum": [
           "image",
-          "video",
-          "log"
+          "video"
         ]
       },
       "Media": {
