@@ -68,8 +68,9 @@
             "properties": {}
           },
           "loggingFeature": {
-            "$ref": "#/components/schemas/Media",
-            "nullable": true
+            "properties": {},
+            "nullable": true,
+            "description": "Use Logfile (logfile_schema.json)"
           }
         }
       },

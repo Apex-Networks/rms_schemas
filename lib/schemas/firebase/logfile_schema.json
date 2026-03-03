@@ -1,0 +1,35 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Logfile Schema",
+    "version": "1.0.0",
+    "description": "Schema for logfile data"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Logfile": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "capturedAt": {
+            "type": "string",
+            "format": "date-time",
+            "x-firestore-type": "timestamp"
+          }
+        },
+        "required": [
+          "url",
+          "filename",
+          "capturedAt"
+        ]
+      }
+    }
+  }
+}
