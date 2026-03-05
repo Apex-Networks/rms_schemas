@@ -18,6 +18,10 @@
           "filename": {
             "type": "string"
           },
+          "deviceId": {
+            "type": "string",
+            "description": "Uploader device identifier"
+          },
           "capturedAt": {
             "type": "string",
             "format": "date-time",
@@ -27,6 +31,7 @@
         "required": [
           "url",
           "filename",
+          "deviceId",
           "capturedAt"
         ]
       }
