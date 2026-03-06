@@ -68,9 +68,9 @@
             "properties": {}
           },
           "loggingFeature": {
-            "properties": {},
-            "nullable": true,
-            "description": "Use Logfile (logfile_schema.json)"
+            "description": "Use Logfile (logfile_schema.json)",
+            "type": "object",
+            "properties": {}
           }
         }
       },
